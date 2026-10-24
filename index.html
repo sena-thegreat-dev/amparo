@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Amparo conecta famílias a cuidadores independentes para uma rotina com mais presença.">
+    <title>Amparo | Presença que cuida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/core.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body data-page="landing">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header" id="topo">
+        <div class="container nav-wrap">
+            <a class="brand" href="#topo" aria-label="Amparo, início"><span aria-hidden="true">♡</span> amparo</a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"
+                aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            <nav id="menu" class="nav-links" aria-label="Navegação principal"><a href="#como-funciona">Como
+                    funciona</a><a href="#modalidades">Modalidades</a><a href="#profissionais">Para profissionais</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="text-button" href="pages/familia.html">Entrar</a>
+                <a class="button button-small"
+                    href="#encontrar">Encontrar cuidador
+                </a>
+            </div>
+        </div>
+    </header>
+    <main id="conteudo" tabindex="-1">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">companhia que respeita cada história</p>
+                    <h1>Mais presença na rotina de quem você ama.</h1>
+                    <p class="lead">Encontre profissionais independentes para companhia e apoio no dia a dia. Combine
+                        necessidades, horários e valores com clareza.</p>
+                    <div class="hero-actions">
+                        <a class="button" href="#encontrar">
+                            Encontrar cuidador
+                        </a>
+                        <a class="button button-light" href="pages/cuidador.html">
+                            Sou cuidador
+                        </a>
+                    </div>
+                    <p class="fine-print">Apoio não clínico. Não inclui procedimentos médicos ou de enfermagem.</p>
+                </div>
+                <img class="hero-image" src="img/fundo-index.jpg" alt="Uma cuidadora conversa com uma senhora em casa">
+            </div>
+        </section>
+        <section class="search-section" id="encontrar">
+            <div class="container">
+                <p class="eyebrow">encontre por região</p>
+                <h2>Um apoio perto da sua rotina</h2>
+                <form class="search-box" id="search-form">
+                    <label>Onde você precisa de apoio?<input id="location" name="location"
+                            value="Vila Olímpia, São Paulo/SP" autocomplete="address-level2"></label>
+                    <label>Data e disponibilidade<select id="availability" name="availability">
+                            <option>17/10/2026 - 15h às 16h</option>
+                            <option>Esta semana</option>
+                            <option>Próxima semana</option>
+                        </select></label>
+                    <label>Modalidade<select id="mode" name="mode">
+                            <option>Companhia e rotina</option>
+                            <option>Atividades e passeios</option>
+                            <option>Acompanhamento noturno</option>
+                        </select></label>
+                    <button class="button search-submit" type="submit">Buscar profissionais</button>
+                    <p class="availability-note">A disponibilidade será confirmada pelo profissional ao aceitar sua
+                        solicitação.</p>
+                </form>
+                <p id="search-feedback" class="search-feedback" role="status"></p>
+            </div>
+        </section>
+        <section class="section" id="modalidades">
+            <div class="container">
+                <p class="eyebrow">como podemos ajudar</p>
+                <h2>Há muitos jeitos de estar presente</h2>
+                <div class="support-grid">
+                    <article class="support-card"><span class="line-icon">☼</span>
+                        <h3>Companhia e rotina</h3>
+                        <p>Conversas, refeições e momentos que tornam o dia mais leve.</p>
+                    </article>
+                    <article class="support-card"><span class="line-icon">✦</span>
+                        <h3>Apoio durante o dia</h3>
+                        <p>Pequenas saídas, atividades e companhia cotidiana.</p>
+                    </article>
+                    <article class="support-card"><span class="line-icon">◔</span>
+                        <h3>Acompanhamento noturno</h3>
+                        <p>Companhia e apoio à rotina no período da noite.</p>
+                    </article>
+                </div>
+                <div class="notice"><strong>O cuidado tem o seu ritmo.</strong> Agende de 1 a 4 encontros por semana e
+                    encontre apoio para os momentos que mais importam.</div>
+            </div>
+        </section>
+        <section class="section soft-section" id="como-funciona">
+            <div class="container">
+                <p class="eyebrow">é simples começar</p>
+                <h2>Do primeiro encontro ao próximo cuidado</h2>
+                <div class="steps-grid">
+                    <article class="step-card"><span>01</span>
+                        <h3>Encontrar</h3>
+                        <p>Compartilhe o que você precisa.</p>
+                    </article>
+                    <article class="step-card"><span>02</span>
+                        <h3>Conversar e escolher</h3>
+                        <p>Conheça perfis e combine detalhes.</p>
+                    </article>
+                    <article class="step-card"><span>03</span>
+                        <h3>Agendar cuidado</h3>
+                        <p>Defina data, horário e local.</p>
+                    </article>
+                    <article class="step-card"><span>04</span>
+                        <h3>Acompanhar e avaliar</h3>
+                        <p>Cuide da experiência a cada encontro.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="profissionais">
+            <div class="container">
+                <p class="eyebrow">profissionais perto de você</p>
+                <h2>Conheça quem pode fazer parte da sua rede</h2>
+                <div class="professionals-grid">
+                    <article class="professional-card">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Renato">
+                            <div>
+                                <h3>Renato</h3>
+                                <p>Cuidador independente</p>
+                            </div><button class="heart-button" aria-label="Salvar Renato">♡</button>
+                        </div>
+                        <p class="rating">★ 4,9 <span>· 21 avaliações</span></p>
+                        <p class="professional-description">Companhia, conversa e apoio em passeios e atividades.</p>
+                        <div class="card-footer"><strong>R$ 35 <small>/ hora</small></strong><button
+                                class="text-button card-action" data-toast="Perfil de Renato salvo para você.">Ver
+                                perfil</button></div>
+                    </article>
+                    <article class="professional-card">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Cláudia">
+                            <div>
+                                <h3>Cláudia</h3>
+                                <p>Cuidadora independente</p>
+                            </div><button class="heart-button" aria-label="Salvar Cláudia">♡</button>
+                        </div>
+                        <p class="rating">★ 4,8 <span>· 18 avaliações</span></p>
+                        <p class="professional-description">Rotina, refeições e companhia para quem precisa de presença.
+                        </p>
+                        <div class="card-footer"><strong>R$ 40 <small>/ hora</small></strong><button
+                                class="text-button card-action" data-toast="Perfil de Cláudia salvo para você.">Ver
+                                perfil</button></div>
+                    </article>
+                    <article class="professional-card">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Gabriel">
+                            <div>
+                                <h3>Gabriel</h3>
+                                <p>Cuidador independente</p>
+                            </div><button class="heart-button" aria-label="Salvar Gabriel">♡</button>
+                        </div>
+                        <p class="rating">★ 5,0 <span>· 14 avaliações</span></p>
+                        <p class="professional-description">Acompanhamento em consultas, passeios e compromissos.</p>
+                        <div class="card-footer"><strong>R$ 32 <small>/ hora</small></strong><button
+                                class="text-button card-action" data-toast="Perfil de Gabriel salvo para você.">Ver
+                                perfil</button></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section soft-section">
+            <div class="container narrow">
+                <p class="eyebrow">transparência desde o início</p>
+                <h2>Informação clara para escolher com atenção</h2>
+                <div class="info-grid">
+                    <article>
+                        <h3>O que o profissional conta</h3>
+                        <p>Experiências, habilidades e apresentações são exibidas para ajudar você a encontrar a pessoa
+                            certa.</p>
+                    </article>
+                    <article>
+                        <h3>O que fica combinado</h3>
+                        <p>Valores e detalhes de cada encontro são definidos entre você e o profissional antes de
+                            seguir.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section payment-section">
+            <div class="container">
+                <p class="eyebrow">sem surpresa no caminho</p>
+                <h2>Você sabe o que paga. Ela sabe o que recebe.</h2>
+                <div class="payment-grid">
+                    <article><span>Total da família</span><strong>R$ 280</strong>
+                        <p>Valor do pacote de encontros.</p>
+                    </article>
+                    <article><span>Comissão da Amparo</span><strong>R$ 42</strong>
+                        <p>Para manter a plataforma segura.</p>
+                    </article>
+                    <article><span>Líquido do profissional</span><strong>R$ 238</strong>
+                        <p>Valor recebido pelo cuidador.</p>
+                    </article>
+                </div>
+                <div class="notice"><strong>Relações justas, cuidado que acontece.</strong> O pagamento é processado
+                    pela plataforma e a distribuição aparece com clareza para todos.</div>
+            </div>
+        </section>
+        <section class="section soft-section work-section">
+            <div class="container">
+                <p class="eyebrow">para quem quer cuidar</p>
+                <h2>Seu trabalho, sua disponibilidade</h2>
+                <div class="work-card">
+                    <div>
+                        <h3>Mais clareza para organizar seus encontros.</h3>
+                        <p>Você escolhe horários, valores e a região onde deseja atuar. A Amparo aproxima você de
+                            famílias que procuram por companhia e apoio no dia a dia.</p>
+                    </div><a href="pages/cuidador.html" class="button">Quero me cadastrar</a>
+                </div>
+            </div>
+        </section>
+        <section class="section faq-section">
+            <div class="container narrow">
+                <p class="eyebrow">a gente explica</p>
+                <h2>Dúvidas fazem parte. Vamos conversar.</h2>
+                <div class="faq-list">
+                    <article class="faq-item"><button aria-expanded="false">A solicitação já confirma o
+                            encontro?<span>+</span></button>
+                        <div>
+                            <p>Não. Depois de enviar sua solicitação, o profissional confirma a disponibilidade antes de
+                                qualquer encontro.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item"><button aria-expanded="false">Posso cancelar?<span>+</span></button>
+                        <div>
+                            <p>Sim. As regras de cancelamento são apresentadas antes da confirmação, com transparência.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="faq-item"><button aria-expanded="false">O que significa pagamento
+                            verificado?<span>+</span></button>
+                        <div>
+                            <p>Significa que a forma de pagamento foi validada para trazer mais segurança aos encontros.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="faq-item"><button aria-expanded="false">Há serviços de
+                            enfermagem?<span>+</span></button>
+                        <div>
+                            <p>Não. A Amparo é voltada à companhia e à rotina, sem procedimentos médicos ou de
+                                enfermagem.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item"><button aria-expanded="false">Como começo agora?<span>+</span></button>
+                        <div>
+                            <p>Conte onde e quando você precisa de apoio. Vamos mostrar profissionais que podem combinar
+                                com sua rotina.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="cta-section">
+            <div class="container">
+                <h2>Uma boa rotina começa com presença.</h2>
+                <p>Encontre um apoio que faça sentido para sua família.</p><a href="#encontrar" class="button">Encontrar
+                    cuidador</a>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-top"><a class="brand" href="#topo"><span aria-hidden="true">♡</span> amparo</a>
+            <nav><a href="#topo">Suporte</a><a href="#topo">Termos de uso</a><a href="#topo">Privacidade</a></nav>
+        </div>
+        <div class="container footer-bottom">Amparo © 2026. Todos os direitos reservados.<br>O apoio não substitui
+            atendimento médico, de enfermagem ou outros serviços de saúde.</div>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

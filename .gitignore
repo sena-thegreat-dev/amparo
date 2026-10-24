@@ -1,0 +1,13 @@
+# Pré-visualizações e artefatos temporários usados para inspeção de PDFs
+/tmp/
+
+# Arquivos locais de ambiente
+.env
+.env.*
+!.env.example
+
+# Dependências e arquivos gerados por stacks MVC comuns
+/node_modules/
+/vendor/
+/storage/logs/
+/public/build/

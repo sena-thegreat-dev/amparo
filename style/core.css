@@ -1,0 +1,47 @@
+/* Base compartilhada: carregado por todas as telas antes do CSS específico. */
+:root {
+  color-scheme: light;
+  --focus-ring: #0d6577;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+button, input, select, textarea { font: inherit; }
+
+button:not(:disabled), [role="button"]:not([aria-disabled="true"]) { cursor: pointer; }
+
+button:disabled { cursor: not-allowed; opacity: .55; }
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #083d4d;
+  color: #fff;
+  font: 700 13px Arial, sans-serif;
+  transform: translateY(-160%);
+  transition: transform .18s ease;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
