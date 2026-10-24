@@ -1,50 +1,780 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Intranet administrativa da Amparo.">
-  <title>Amparo | Administração</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/core.css">
-  <link rel="stylesheet" href="../style/intranet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Intranet administrativa da Amparo.">
+    <title>Amparo | Administração</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style/core.css">
+    <link rel="stylesheet" href="../style/intranet.css">
 </head>
+
 <body data-page="admin-dashboard">
-  <a class="skip-link" href="#admin-content">Pular para o conteúdo</a>
-  <div class="admin-app">
-    <aside class="admin-sidebar" id="admin-sidebar">
-      <a class="admin-brand" href="../index.html"><span>♡</span> amparo</a>
-      <p class="admin-side-title">área administração</p>
-      <nav class="admin-nav" aria-label="Navegação administrativa">
-        <button class="admin-nav-item active" data-section="admin-dashboard"><i>●</i> Dashboard</button>
-        <button class="admin-nav-item" data-section="admin-users"><i>○</i> Usuários</button>
-        <button class="admin-nav-item" data-section="admin-docs"><i>○</i> Documentos</button>
-        <button class="admin-nav-item" data-section="admin-reconciliation"><i>○</i> Conciliação</button>
-        <button class="admin-nav-item" data-section="admin-occurrences"><i>○</i> Ocorrências</button>
-        <button class="admin-nav-item" data-section="admin-audit"><i>○</i> Auditoria</button>
-      </nav>
-      <div class="admin-restricted"><b>Acesso restrito.</b><br>Consultas e ações deixam uma trilha de auditoria.</div>
-      <small>Amparo © 2026 · Dados fictícios</small>
-    </aside>
-    <div class="admin-page"><header class="admin-topbar"><button class="admin-mobile-menu" aria-label="Abrir menu" aria-expanded="false">☰</button><span id="admin-breadcrumb">Administração / Dashboard</span><span>Gabriel Sena Administrador · Operações</span></header>
-      <main class="admin-main" id="admin-content" tabindex="-1">
-        <section class="admin-view active" id="admin-dashboard"><p class="admin-kicker">administração · outubro 2026</p><h1>Dashboard operacional</h1><p class="admin-intro">01–19/10/2026 · visão consolidada da plataforma · todos os dados são demonstrativos.</p><label class="admin-control full">Período da operação<input value="01–19/10/2026"></label><div class="admin-metrics big"><article><span>GMV capturado</span><strong>R$ 40.000</strong><p>Exclui valores apenas pré-autorizados</p></article><article><span>Comissão acumulada</span><strong>R$ 6.000</strong><p>15% do GMV capturado</p></article><article><span>Líquido dos profissionais</span><strong>R$ 34.000</strong><p>R$ 32.000 repassados + R$ 2.000 pendentes</p></article></div><div class="admin-metrics small"><article><span>Serviços concluídos</span><strong>125</strong><p>Período de 01 a 19/10</p></article><article><span>Cadastros</span><strong>812</strong><p>640 famílias + 172 profissionais</p></article><article><span>Fila documental</span><strong>23</strong><p>Aguardando conclusão da análise</p></article><article><span>Ocorrências abertas</span><strong>4</strong><p>Triagem e acompanhamento</p></article></div><div class="admin-columns"><div class="admin-stack"><article class="admin-card"><h2>Serviços concluídos por período</h2><p>125 encontros · evolução operacional demonstrativa</p><div class="bar-chart"><div><b>35</b><span style="height:78%"></span><small>01–05/10</small></div><div><b>38</b><span style="height:91%"></span><small>06–10/10</small></div><div><b>33</b><span style="height:71%"></span><small>11–15/10</small></div><div><b>19</b><span style="height:43%"></span><small>16–19/10</small></div></div><small>Unidade: serviços concluídos. Não representa solicitações pendentes.</small></article><article class="admin-card"><h2>Atividade recente</h2><table><thead><tr><th>Horário</th><th>Evento</th><th>Referência</th></tr></thead><tbody><tr><td>19/10 · 10h12</td><td>Documento em análise</td><td>DOC-023 · Rafael Nunes</td></tr><tr><td>19/10 · 09h41</td><td>Pré-autorização R$ 280</td><td>AMP-2026-1020 · fora do GMV</td></tr><tr><td>18/10 · 12h15</td><td>Encontro concluído</td><td>AMP-2026-1018 · R$ 140</td></tr><tr><td>16/10 · 14h32</td><td>Documentos conferidos</td><td>Beto</td></tr></tbody></table></article></div><aside class="admin-aside"><article class="admin-card"><h2>Pendências prioritárias</h2><em>23 documentos em fila</em><p>8 pendentes de triagem · 15 em análise</p><button class="admin-secondary" data-go-section="admin-docs">Abrir fila documental</button><em>4 ocorrências abertas</em><p>1 alta · 2 médias · 1 baixa</p><button class="admin-secondary" data-go-section="admin-occurrences">Ver ocorrências</button></article><article class="admin-card"><h2>Repasses da plataforma</h2><p>R$ 32.000 repassados</p><p>R$ 2.000 pendentes</p><p>Total líquido: R$ 34.000. Agregado da plataforma; não confundir com o saldo pessoal de Beto, que não recebeu repasse nesta amostra.</p><button class="admin-secondary" data-go-section="admin-reconciliation">Abrir conciliação</button></article><div class="admin-note"><b>Acesso administrativo</b><br><br>Dados pessoais restritos por papel. Ações sensíveis exigem motivo e confirmação; consultas e decisões deixam registros persistentes.</div></aside></div></section>
+    <a class="skip-link" href="#admin-content">Pular para o conteúdo</a>
+    <div class="admin-app">
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <a class="admin-brand" href="../index.html"><span>♡</span> amparo</a>
+            <p class="admin-side-title">área administração</p>
+            <nav class="admin-nav" aria-label="Navegação administrativa">
+                <button class="admin-nav-item active" data-section="admin-dashboard"><i>●</i> Dashboard</button>
+                <button class="admin-nav-item" data-section="admin-users"><i>○</i> Usuários</button>
+                <button class="admin-nav-item" data-section="admin-docs"><i>○</i> Documentos</button>
+                <button class="admin-nav-item" data-section="admin-reconciliation"><i>○</i> Conciliação</button>
+                <button class="admin-nav-item" data-section="admin-occurrences"><i>○</i> Ocorrências</button>
+                <button class="admin-nav-item" data-section="admin-audit"><i>○</i> Auditoria</button>
+            </nav>
+            <div class="admin-restricted"><b>Acesso restrito.</b><br>Consultas e ações deixam uma trilha de auditoria.
+            </div>
+            <small>Amparo © 2026 · Dados fictícios</small>
+        </aside>
+        <div class="admin-page">
+            <header class="admin-topbar"><button class="admin-mobile-menu" aria-label="Abrir menu"
+                    aria-expanded="false">☰</button><span id="admin-breadcrumb">Administração /
+                    Dashboard</span><span>Gabriel Sena Administrador · Operações</span></header>
+            <main class="admin-main" id="admin-content" tabindex="-1">
+                <section class="admin-view active" id="admin-dashboard">
+                    <p class="admin-kicker">administração · outubro 2026</p>
+                    <h1>Dashboard operacional</h1>
+                    <p class="admin-intro">01–19/10/2026 · visão consolidada da plataforma · todos os dados são
+                        demonstrativos.</p><label class="admin-control full">Período da operação<input
+                            value="01–19/10/2026"></label>
+                    <div class="admin-metrics big">
+                        <article><span>GMV capturado</span><strong>R$ 40.000</strong>
+                            <p>Exclui valores apenas pré-autorizados</p>
+                        </article>
+                        <article><span>Comissão acumulada</span><strong>R$ 6.000</strong>
+                            <p>15% do GMV capturado</p>
+                        </article>
+                        <article><span>Líquido dos profissionais</span><strong>R$ 34.000</strong>
+                            <p>R$ 32.000 repassados + R$ 2.000 pendentes</p>
+                        </article>
+                    </div>
+                    <div class="admin-metrics small">
+                        <article><span>Serviços concluídos</span><strong>125</strong>
+                            <p>Período de 01 a 19/10</p>
+                        </article>
+                        <article><span>Cadastros</span><strong>812</strong>
+                            <p>640 famílias + 172 profissionais</p>
+                        </article>
+                        <article><span>Fila documental</span><strong>23</strong>
+                            <p>Aguardando conclusão da análise</p>
+                        </article>
+                        <article><span>Ocorrências abertas</span><strong>4</strong>
+                            <p>Triagem e acompanhamento</p>
+                        </article>
+                    </div>
+                    <div class="admin-columns">
+                        <div class="admin-stack">
+                            <article class="admin-card">
+                                <h2>Serviços concluídos por período</h2>
+                                <p>125 encontros · evolução operacional demonstrativa</p>
+                                <div class="bar-chart">
+                                    <div><b>35</b><span style="height:78%"></span><small>01–05/10</small></div>
+                                    <div><b>38</b><span style="height:91%"></span><small>06–10/10</small></div>
+                                    <div><b>33</b><span style="height:71%"></span><small>11–15/10</small></div>
+                                    <div><b>19</b><span style="height:43%"></span><small>16–19/10</small></div>
+                                </div><small>Unidade: serviços concluídos. Não representa solicitações
+                                    pendentes.</small>
+                            </article>
+                            <article class="admin-card">
+                                <h2>Atividade recente</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Horário</th>
+                                            <th>Evento</th>
+                                            <th>Referência</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>19/10 · 10h12</td>
+                                            <td>Documento em análise</td>
+                                            <td>DOC-023 · Rafael Nunes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19/10 · 09h41</td>
+                                            <td>Pré-autorização R$ 280</td>
+                                            <td>AMP-2026-1020 · fora do GMV</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18/10 · 12h15</td>
+                                            <td>Encontro concluído</td>
+                                            <td>AMP-2026-1018 · R$ 140</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16/10 · 14h32</td>
+                                            <td>Documentos conferidos</td>
+                                            <td>Beto</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </div>
+                        <aside class="admin-aside">
+                            <article class="admin-card">
+                                <h2>Pendências prioritárias</h2><em>23 documentos em fila</em>
+                                <p>8 pendentes de triagem · 15 em análise</p><button class="admin-secondary"
+                                    data-go-section="admin-docs">Abrir fila documental</button><em>4 ocorrências
+                                    abertas</em>
+                                <p>1 alta · 2 médias · 1 baixa</p><button class="admin-secondary"
+                                    data-go-section="admin-occurrences">Ver ocorrências</button>
+                            </article>
+                            <article class="admin-card">
+                                <h2>Repasses da plataforma</h2>
+                                <p>R$ 32.000 repassados</p>
+                                <p>R$ 2.000 pendentes</p>
+                                <p>Total líquido: R$ 34.000. Agregado da plataforma; não confundir com o saldo pessoal
+                                    de Beto, que não recebeu repasse nesta amostra.</p><button class="admin-secondary"
+                                    data-go-section="admin-reconciliation">Abrir conciliação</button>
+                            </article>
+                            <div class="admin-note"><b>Acesso administrativo</b><br><br>Dados pessoais restritos por
+                                papel. Ações sensíveis exigem motivo e confirmação; consultas e decisões deixam
+                                registros persistentes.</div>
+                        </aside>
+                    </div>
+                </section>
 
-        <section class="admin-view" id="admin-users"><p class="admin-kicker">administração · outubro 2026</p><h1>Usuários e acessos</h1><p class="admin-intro">Cadastro demonstrativo · dados sensíveis mascarados · ações com motivo e confirmação.</p><div class="admin-filter-row"><label class="admin-control">Pesquisa<input id="user-search" placeholder="Nome ou ID do usuário"></label><label class="admin-control">Papel<select><option>Todos</option><option>Família</option><option>Profissional</option></select></label><label class="admin-control">Status da conta<select><option>Todos</option><option>Ativa</option><option>Suspensa</option></select></label></div><article class="admin-card"><h2>Contas · amostra de 812 cadastros</h2><div class="table-wrap"><table id="users-table"><thead><tr><th>ID / Nome</th><th>Papel</th><th>Cadastro</th><th>Documentos</th><th>Conta</th></tr></thead><tbody><tr><td>USR-014 · Gabriel Sena</td><td>Família</td><td>01/10/2026</td><td>Não se aplica à fila profissional</td><td>Ativa</td></tr><tr><td>USR-028 · Beto</td><td>Profissional</td><td>02/10/2026</td><td>Verificados · 16/10/2026</td><td>Ativa</td></tr><tr><td>USR-173 · Rafael Nunes</td><td>Profissional</td><td>18/10/2026</td><td>Em análise · DOC-023</td><td>Ativa · perfil em revisão</td></tr><tr><td>USR-611 · Clara Mendes</td><td>Família</td><td>10/10/2026</td><td>Não se aplica</td><td>Acesso suspenso · 18/10</td></tr><tr><td>ADM-003 · Gabriel Sena</td><td>Administração</td><td>01/10/2026</td><td>Acesso interno restrito</td><td>Ativa</td></tr></tbody></table></div><p>5 contas fictícias exibidas. Os 812 cadastros do dashboard incluem somente famílias e profissionais; contas internas são separadas.</p></article><div class="admin-columns"><div class="admin-stack"><article class="admin-card"><h2>Detalhe · Beto</h2><span class="admin-pill ok">Documentos verificados</span><p>USR-028 · profissional independente · conta ativa</p><p>CPF •••.•••.•••-72<br>E-mail: a•••@exemplo.invalid<br>Telefone: (11) •••••-8872<br>Guaianases · São Paulo/SP</p><p>Identidade e certificado conferidos em 16/10/2026 às 14h32. 6 anos de experiência autodeclarada. A conferência não atesta competência clínica.</p><button class="admin-secondary" data-toast="Consulta documental registrada nesta demonstração.">Consultar documentos</button><div class="admin-note"><b>Privacidade por padrão</b><br><br>Nenhuma senha ou dado completo é exibido. Acesso a documentos restrito e registrado.</div></article><article class="admin-card"><h2>Histórico de acesso</h2><table><thead><tr><th>Data</th><th>Autor</th><th>Evento</th></tr></thead><tbody><tr><td>19/10 · 10h20</td><td>Gabriel Sena Administrador</td><td>Consulta de cadastro · suporte</td></tr><tr><td>16/10 · 14h32</td><td>Gabriel Sena Administrador</td><td>Conferência documental concluída</td></tr></tbody></table></article></div><aside class="admin-aside"><article class="admin-card"><h2>Revisão de ação · exemplo</h2><em>Nenhuma ação aplicada</em><p>USR-611 · Clara Mendes</p><p>Acesso suspenso em 18/10. Proposta: reativar acesso após revisão administrativa.</p><label class="admin-control">Motivo obrigatório<textarea>Revisão documental do chamado SUP-611 concluída.</textarea></label><p>Antes: suspenso<br>Depois proposto: ativo<br>Autor: Gabriel Sena Administrador</p><button class="admin-secondary" data-toast="Confirmação de revisão preparada, sem alteração real.">Revisar confirmação</button></article></aside></div></section>
+                <section class="admin-view" id="admin-users">
+                    <p class="admin-kicker">administração · outubro 2026</p>
+                    <h1>Usuários e acessos</h1>
+                    <p class="admin-intro">Cadastro demonstrativo · dados sensíveis mascarados · ações com motivo e
+                        confirmação.</p>
+                    <div class="admin-filter-row"><label class="admin-control">Pesquisa<input id="user-search"
+                                placeholder="Nome ou ID do usuário"></label><label class="admin-control">Papel<select>
+                                <option>Todos</option>
+                                <option>Família</option>
+                                <option>Profissional</option>
+                            </select></label><label class="admin-control">Status da conta<select>
+                                <option>Todos</option>
+                                <option>Ativa</option>
+                                <option>Suspensa</option>
+                            </select></label></div>
+                    <article class="admin-card">
+                        <h2>Contas · amostra de 812 cadastros</h2>
+                        <div class="table-wrap">
+                            <table id="users-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID / Nome</th>
+                                        <th>Papel</th>
+                                        <th>Cadastro</th>
+                                        <th>Documentos</th>
+                                        <th>Conta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>USR-014 · Gabriel Sena</td>
+                                        <td>Família</td>
+                                        <td>01/10/2026</td>
+                                        <td>Não se aplica à fila profissional</td>
+                                        <td>Ativa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>USR-028 · Beto</td>
+                                        <td>Profissional</td>
+                                        <td>02/10/2026</td>
+                                        <td>Verificados · 16/10/2026</td>
+                                        <td>Ativa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>USR-173 · Rafael Nunes</td>
+                                        <td>Profissional</td>
+                                        <td>18/10/2026</td>
+                                        <td>Em análise · DOC-023</td>
+                                        <td>Ativa · perfil em revisão</td>
+                                    </tr>
+                                    <tr>
+                                        <td>USR-611 · Clara Mendes</td>
+                                        <td>Família</td>
+                                        <td>10/10/2026</td>
+                                        <td>Não se aplica</td>
+                                        <td>Acesso suspenso · 18/10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ADM-003 · Gabriel Sena</td>
+                                        <td>Administração</td>
+                                        <td>01/10/2026</td>
+                                        <td>Acesso interno restrito</td>
+                                        <td>Ativa</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>5 contas fictícias exibidas. Os 812 cadastros do dashboard incluem somente famílias e
+                            profissionais; contas internas são separadas.</p>
+                    </article>
+                    <div class="admin-columns">
+                        <div class="admin-stack">
+                            <article class="admin-card">
+                                <h2>Detalhe · Beto</h2><span class="admin-pill ok">Documentos verificados</span>
+                                <p>USR-028 · profissional independente · conta ativa</p>
+                                <p>CPF •••.•••.•••-72<br>E-mail: a•••@exemplo.invalid<br>Telefone: (11)
+                                    •••••-8872<br>Guaianases · São Paulo/SP</p>
+                                <p>Identidade e certificado conferidos em 16/10/2026 às 14h32. 6 anos de experiência
+                                    autodeclarada. A conferência não atesta competência clínica.</p><button
+                                    class="admin-secondary"
+                                    data-toast="Consulta documental registrada nesta demonstração.">Consultar
+                                    documentos</button>
+                                <div class="admin-note"><b>Privacidade por padrão</b><br><br>Nenhuma senha ou dado
+                                    completo é exibido. Acesso a documentos restrito e registrado.</div>
+                            </article>
+                            <article class="admin-card">
+                                <h2>Histórico de acesso</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Autor</th>
+                                            <th>Evento</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>19/10 · 10h20</td>
+                                            <td>Gabriel Sena Administrador</td>
+                                            <td>Consulta de cadastro · suporte</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16/10 · 14h32</td>
+                                            <td>Gabriel Sena Administrador</td>
+                                            <td>Conferência documental concluída</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </div>
+                        <aside class="admin-aside">
+                            <article class="admin-card">
+                                <h2>Revisão de ação · exemplo</h2><em>Nenhuma ação aplicada</em>
+                                <p>USR-611 · Clara Mendes</p>
+                                <p>Acesso suspenso em 18/10. Proposta: reativar acesso após revisão administrativa.</p>
+                                <label class="admin-control">Motivo
+                                    obrigatório<textarea>Revisão documental do chamado SUP-611 concluída.</textarea></label>
+                                <p>Antes: suspenso<br>Depois proposto: ativo<br>Autor: Gabriel Sena Administrador</p>
+                                <button class="admin-secondary"
+                                    data-toast="Confirmação de revisão preparada, sem alteração real.">Revisar
+                                    confirmação</button>
+                            </article>
+                        </aside>
+                    </div>
+                </section>
 
-        <section class="admin-view" id="admin-docs"><p class="admin-kicker">administração · outubro 2026</p><h1>Verificação documental</h1><p class="admin-intro">23 documentos em fila · 8 pendentes e 15 em análise · amostra demonstrativa.</p><div class="admin-filter-row"><label class="admin-control">Status<select><option>Em análise</option><option>Pendente</option><option>Aprovado</option></select></label><label class="admin-control">Consultar estados<select><option>Pendente / aprovado / rejeitado</option></select></label><label class="admin-control">Tipo<select><option>Identidade e certificado</option></select></label></div><article class="admin-card"><h2>Fila de análise · subconjunto</h2><table><thead><tr><th>Protocolo</th><th>Profissional</th><th>Recebimento</th><th>Documentos</th><th>Estado</th></tr></thead><tbody><tr><td>DOC-023</td><td>Rafael Nunes</td><td>18/10 · 16h10</td><td>Identidade + certificado</td><td>Em análise</td></tr><tr><td>DOC-022</td><td>Marta Ribeiro</td><td>18/10 · 14h22</td><td>Certificado</td><td>Pendente</td></tr><tr><td>DOC-021</td><td>Joana Freitas</td><td>17/10 · 11h40</td><td>Identidade</td><td>Em análise</td></tr></tbody></table><p>Beto não integra a fila: documentos já verificados em 16/10/2026.</p></article><div class="admin-columns"><div class="admin-stack"><article class="admin-card"><h2>DOC-023 · Rafael Nunes</h2><em>Em análise</em><p>USR-173 · cadastro em 18/10/2026<br>CPF •••.•••.•••-09 · São Paulo/SP<br>Responsável pela análise: Gabriel Sena Administrador</p><div class="document-previews"><article>▱<br><b>Identificação · ID-•••09</b><br><br>Prévia mascarada · acesso restrito e registrado.<br>PDF recebido em 18/10.</article><article>▱<br><b>Certificado · CERT-•••173</b><br><br>Prévia mascarada · acesso restrito e registrado.<br>PDF recebido em 18/10.</article></div><h3>Checklist de conferência</h3><table><tbody><tr><td>Legibilidade e integridade</td><td>✓ Arquivos legíveis</td></tr><tr><td>Nome e titularidade</td><td>✓ Correspondência documental</td></tr><tr><td>Identificação</td><td>✓ Número mascarado conferido</td></tr><tr><td>Certificado: emissor e conclusão</td><td>Em análise · conferir referência</td></tr></tbody></table><div class="admin-note">Conferência documental, não avaliação clínica<br><br>A análise compara os documentos enviados. Não atesta competência médica, de enfermagem ou garantia de segurança.</div></article><article class="admin-card"><h2>Histórico auditável</h2><table><thead><tr><th>Data</th><th>Autor</th><th>Evento</th></tr></thead><tbody><tr><td>18/10 · 16h10</td><td>Rafael Nunes</td><td>Envio · DOC-023</td></tr><tr><td>19/10 · 10h12</td><td>Gabriel Sena Administrador</td><td>Pendente → em análise</td></tr><tr><td>19/10 · 10h16</td><td>Gabriel Sena Administrador</td><td>Consulta protegida · identificação</td></tr></tbody></table></article></div><aside class="admin-aside"><article class="admin-card"><h2>Decisão em revisão</h2><p>Análise não concluída. Se houver inconsistência, registre o motivo antes de solicitar correção ou rejeitar.</p><label class="admin-control">Nota de análise<textarea>Conferir referência de emissão do certificado.</textarea></label><label class="admin-control">Motivo obrigatório para rejeição<textarea>Ainda não informado</textarea></label><button class="admin-primary" id="approve-docs">Aprovar documentos</button><button class="admin-secondary" data-toast="Solicitação de correção preparada em modo demonstrativo.">Solicitar correção</button><div class="admin-note">Confirmar antes de registrar<br><br>A decisão exibirá protocolo, autor, antes/depois e motivo. Nenhuma aprovação ou rejeição foi aplicada nesta tela.</div></article></aside></div></section>
+                <section class="admin-view" id="admin-docs">
+                    <p class="admin-kicker">administração · outubro 2026</p>
+                    <h1>Verificação documental</h1>
+                    <p class="admin-intro">23 documentos em fila · 8 pendentes e 15 em análise · amostra demonstrativa.
+                    </p>
+                    <div class="admin-filter-row"><label class="admin-control">Status<select>
+                                <option>Em análise</option>
+                                <option>Pendente</option>
+                                <option>Aprovado</option>
+                            </select></label><label class="admin-control">Consultar estados<select>
+                                <option>Pendente / aprovado / rejeitado</option>
+                            </select></label><label class="admin-control">Tipo<select>
+                                <option>Identidade e certificado</option>
+                            </select></label></div>
+                    <article class="admin-card">
+                        <h2>Fila de análise · subconjunto</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Protocolo</th>
+                                    <th>Profissional</th>
+                                    <th>Recebimento</th>
+                                    <th>Documentos</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DOC-023</td>
+                                    <td>Rafael Nunes</td>
+                                    <td>18/10 · 16h10</td>
+                                    <td>Identidade + certificado</td>
+                                    <td>Em análise</td>
+                                </tr>
+                                <tr>
+                                    <td>DOC-022</td>
+                                    <td>Marta Ribeiro</td>
+                                    <td>18/10 · 14h22</td>
+                                    <td>Certificado</td>
+                                    <td>Pendente</td>
+                                </tr>
+                                <tr>
+                                    <td>DOC-021</td>
+                                    <td>Joana Freitas</td>
+                                    <td>17/10 · 11h40</td>
+                                    <td>Identidade</td>
+                                    <td>Em análise</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Beto não integra a fila: documentos já verificados em 16/10/2026.</p>
+                    </article>
+                    <div class="admin-columns">
+                        <div class="admin-stack">
+                            <article class="admin-card">
+                                <h2>DOC-023 · Rafael Nunes</h2><em>Em análise</em>
+                                <p>USR-173 · cadastro em 18/10/2026<br>CPF •••.•••.•••-09 · São Paulo/SP<br>Responsável
+                                    pela análise: Gabriel Sena Administrador</p>
+                                <div class="document-previews">
+                                    <article>▱<br><b>Identificação · ID-•••09</b><br><br>Prévia mascarada · acesso
+                                        restrito e registrado.<br>PDF recebido em 18/10.</article>
+                                    <article>▱<br><b>Certificado · CERT-•••173</b><br><br>Prévia mascarada · acesso
+                                        restrito e registrado.<br>PDF recebido em 18/10.</article>
+                                </div>
+                                <h3>Checklist de conferência</h3>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Legibilidade e integridade</td>
+                                            <td>✓ Arquivos legíveis</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nome e titularidade</td>
+                                            <td>✓ Correspondência documental</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Identificação</td>
+                                            <td>✓ Número mascarado conferido</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Certificado: emissor e conclusão</td>
+                                            <td>Em análise · conferir referência</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="admin-note">Conferência documental, não avaliação clínica<br><br>A análise
+                                    compara os documentos enviados. Não atesta competência médica, de enfermagem ou
+                                    garantia de segurança.</div>
+                            </article>
+                            <article class="admin-card">
+                                <h2>Histórico auditável</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Autor</th>
+                                            <th>Evento</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>18/10 · 16h10</td>
+                                            <td>Rafael Nunes</td>
+                                            <td>Envio · DOC-023</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19/10 · 10h12</td>
+                                            <td>Gabriel Sena Administrador</td>
+                                            <td>Pendente → em análise</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19/10 · 10h16</td>
+                                            <td>Gabriel Sena Administrador</td>
+                                            <td>Consulta protegida · identificação</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </div>
+                        <aside class="admin-aside">
+                            <article class="admin-card">
+                                <h2>Decisão em revisão</h2>
+                                <p>Análise não concluída. Se houver inconsistência, registre o motivo antes de solicitar
+                                    correção ou rejeitar.</p><label class="admin-control">Nota de
+                                    análise<textarea>Conferir referência de emissão do certificado.</textarea></label><label
+                                    class="admin-control">Motivo obrigatório para
+                                    rejeição<textarea>Ainda não informado</textarea></label><button
+                                    class="admin-primary" id="approve-docs">Aprovar documentos</button><button
+                                    class="admin-secondary"
+                                    data-toast="Solicitação de correção preparada em modo demonstrativo.">Solicitar
+                                    correção</button>
+                                <div class="admin-note">Confirmar antes de registrar<br><br>A decisão exibirá protocolo,
+                                    autor, antes/depois e motivo. Nenhuma aprovação ou rejeição foi aplicada nesta tela.
+                                </div>
+                            </article>
+                        </aside>
+                    </div>
+                </section>
 
-        <section class="admin-view" id="admin-reconciliation"><p class="admin-kicker">administração · outubro 2026</p><h1>Conciliação financeira</h1><p class="admin-intro">01–19/10/2026 · valores somente leitura · totais consolidados da plataforma.</p><div class="admin-metrics big"><article><span>GMV capturado</span><strong>R$ 40.000</strong><p>Pré-autorizações excluídas</p></article><article><span>Comissão · 15%</span><strong>R$ 6.000</strong><p>Retida do bruto capturado</p></article><article><span>Líquido dos profissionais</span><strong>R$ 34.000</strong><p>R$ 32.000 repassados · R$ 2.000 pendentes</p></article></div><div class="admin-filter-row"><label class="admin-control">Período<input value="01–19/10/2026"></label><label class="admin-control">Estado<select><option>Captura / repasse / estorno</option></select></label><label class="admin-control">Pesquisa<input placeholder="ID da transação ou evento"></label></div><button class="admin-secondary" data-toast="Exportação simulada. Nenhum arquivo foi baixado.">Exportar conciliação</button><article class="admin-card transactions"><h2>Transações · subconjunto demonstrativo</h2><p>Esta amostra não representa a soma total do dashboard. O serviço futuro de 20/10 aparece para consulta da pré-autorização realizada em 19/10.</p><table><thead><tr><th>Transação / serviço</th><th>Pagamento</th><th>Bruto</th><th>Comissão / líquido</th><th>Repasse / estorno</th></tr></thead><tbody><tr><td>TX-1012 · 12/10</td><td>Capturado · concluído</td><td>R$ 140</td><td>R$ 21 / R$ 119</td><td>Pendente / sem estorno</td></tr><tr><td>TX-1018 · 18/10</td><td>Capturado · concluído</td><td>R$ 140</td><td>R$ 21 / R$ 119</td><td>Pendente / sem estorno</td></tr><tr><td>TX-1020 · 20/10</td><td>Só pré-autorizado</td><td>R$ 280 reservado</td><td>R$ 42 / R$ 238 potenciais</td><td>Não disponível / sem estorno</td></tr><tr><td>TX-0987 · 15/10</td><td>Capturado</td><td>R$ 320</td><td>R$ 48 / R$ 272</td><td>Em investigação / sem estorno</td></tr></tbody></table></article><div class="admin-columns"><div class="admin-stack"><article class="admin-card"><h2>Detalhe · TX-1020</h2><em>Aguardando aceite</em><p>AMP-2026-1020 · Gabriel Sena / Beto</p><p>19/10/2026 · 09h41 · Visa •••• 4242<br>Evento PAY-AUTH-1020: pré-autorização aprovada<br>Valor reservado: R$ 280,00<br>Capturado: R$ 0,00 · comissão realizada: R$ 0,00<br>Líquido potencial: R$ 238,00 · não disponível</p><div class="admin-note">Excluída do GMV capturado<br><br>Captura somente após aceite. Recusa, expiração ou cancelamento pré-aceite liberam a reserva sem custo.</div></article><article class="admin-card"><h2>Divergência em investigação</h2><em>TX-0987 · investigação</em><p>Evento REP-0987 com comprovante bancário ainda não conciliado. Divergência de status de repasse, não de valor capturado. Operação fictícia não ligada a Beto ou Helena.</p><p>Bruto R$ 320 · comissão R$ 48 · líquido R$ 272. Permanece na parcela pendente consolidada até confirmação bancária.</p><div class="admin-note">Totais preservados<br><br>Nenhum ajuste automático foi aplicado. GMV, comissão e líquido permanecem R$ 40.000 / R$ 6.000 / R$ 34.000.</div></article></div><aside class="admin-aside"><article class="admin-card"><h2>Correção por evento</h2><p>Não há edição arbitrária de valores. Uma correção depende de evento identificado ou estorno autorizado.</p><label class="admin-control">Evento em revisão<textarea>REP-0987 · conferir retorno bancário</textarea></label><label class="admin-control">Motivo obrigatório<textarea>Status de repasse sem confirmação bancária.</textarea></label><button class="admin-secondary" data-toast="Evento enviado para revisão em modo demonstrativo.">Revisar evento</button><div class="admin-note">Confirmação e auditoria<br><br>Antes de aplicar uma ação autorizada, confirme evento, responsável, motivo e efeito. A trilha mantém antes/depois e horário.</div></article></aside></div></section>
+                <section class="admin-view" id="admin-reconciliation">
+                    <p class="admin-kicker">administração · outubro 2026</p>
+                    <h1>Conciliação financeira</h1>
+                    <p class="admin-intro">01–19/10/2026 · valores somente leitura · totais consolidados da plataforma.
+                    </p>
+                    <div class="admin-metrics big">
+                        <article><span>GMV capturado</span><strong>R$ 40.000</strong>
+                            <p>Pré-autorizações excluídas</p>
+                        </article>
+                        <article><span>Comissão · 15%</span><strong>R$ 6.000</strong>
+                            <p>Retida do bruto capturado</p>
+                        </article>
+                        <article><span>Líquido dos profissionais</span><strong>R$ 34.000</strong>
+                            <p>R$ 32.000 repassados · R$ 2.000 pendentes</p>
+                        </article>
+                    </div>
+                    <div class="admin-filter-row"><label class="admin-control">Período<input
+                                value="01–19/10/2026"></label><label class="admin-control">Estado<select>
+                                <option>Captura / repasse / estorno</option>
+                            </select></label><label class="admin-control">Pesquisa<input
+                                placeholder="ID da transação ou evento"></label></div><button class="admin-secondary"
+                        data-toast="Exportação simulada. Nenhum arquivo foi baixado.">Exportar conciliação</button>
+                    <article class="admin-card transactions">
+                        <h2>Transações · subconjunto demonstrativo</h2>
+                        <p>Esta amostra não representa a soma total do dashboard. O serviço futuro de 20/10 aparece para
+                            consulta da pré-autorização realizada em 19/10.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Transação / serviço</th>
+                                    <th>Pagamento</th>
+                                    <th>Bruto</th>
+                                    <th>Comissão / líquido</th>
+                                    <th>Repasse / estorno</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TX-1012 · 12/10</td>
+                                    <td>Capturado · concluído</td>
+                                    <td>R$ 140</td>
+                                    <td>R$ 21 / R$ 119</td>
+                                    <td>Pendente / sem estorno</td>
+                                </tr>
+                                <tr>
+                                    <td>TX-1018 · 18/10</td>
+                                    <td>Capturado · concluído</td>
+                                    <td>R$ 140</td>
+                                    <td>R$ 21 / R$ 119</td>
+                                    <td>Pendente / sem estorno</td>
+                                </tr>
+                                <tr>
+                                    <td>TX-1020 · 20/10</td>
+                                    <td>Só pré-autorizado</td>
+                                    <td>R$ 280 reservado</td>
+                                    <td>R$ 42 / R$ 238 potenciais</td>
+                                    <td>Não disponível / sem estorno</td>
+                                </tr>
+                                <tr>
+                                    <td>TX-0987 · 15/10</td>
+                                    <td>Capturado</td>
+                                    <td>R$ 320</td>
+                                    <td>R$ 48 / R$ 272</td>
+                                    <td>Em investigação / sem estorno</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <div class="admin-columns">
+                        <div class="admin-stack">
+                            <article class="admin-card">
+                                <h2>Detalhe · TX-1020</h2><em>Aguardando aceite</em>
+                                <p>AMP-2026-1020 · Gabriel Sena / Beto</p>
+                                <p>19/10/2026 · 09h41 · Visa •••• 4242<br>Evento PAY-AUTH-1020: pré-autorização
+                                    aprovada<br>Valor reservado: R$ 280,00<br>Capturado: R$ 0,00 · comissão realizada:
+                                    R$ 0,00<br>Líquido potencial: R$ 238,00 · não disponível</p>
+                                <div class="admin-note">Excluída do GMV capturado<br><br>Captura somente após aceite.
+                                    Recusa, expiração ou cancelamento pré-aceite liberam a reserva sem custo.</div>
+                            </article>
+                            <article class="admin-card">
+                                <h2>Divergência em investigação</h2><em>TX-0987 · investigação</em>
+                                <p>Evento REP-0987 com comprovante bancário ainda não conciliado. Divergência de status
+                                    de repasse, não de valor capturado. Operação fictícia não ligada a Beto ou Helena.
+                                </p>
+                                <p>Bruto R$ 320 · comissão R$ 48 · líquido R$ 272. Permanece na parcela pendente
+                                    consolidada até confirmação bancária.</p>
+                                <div class="admin-note">Totais preservados<br><br>Nenhum ajuste automático foi aplicado.
+                                    GMV, comissão e líquido permanecem R$ 40.000 / R$ 6.000 / R$ 34.000.</div>
+                            </article>
+                        </div>
+                        <aside class="admin-aside">
+                            <article class="admin-card">
+                                <h2>Correção por evento</h2>
+                                <p>Não há edição arbitrária de valores. Uma correção depende de evento identificado ou
+                                    estorno autorizado.</p><label class="admin-control">Evento em
+                                    revisão<textarea>REP-0987 · conferir retorno bancário</textarea></label><label
+                                    class="admin-control">Motivo
+                                    obrigatório<textarea>Status de repasse sem confirmação bancária.</textarea></label><button
+                                    class="admin-secondary"
+                                    data-toast="Evento enviado para revisão em modo demonstrativo.">Revisar
+                                    evento</button>
+                                <div class="admin-note">Confirmação e auditoria<br><br>Antes de aplicar uma ação
+                                    autorizada, confirme evento, responsável, motivo e efeito. A trilha mantém
+                                    antes/depois e horário.</div>
+                            </article>
+                        </aside>
+                    </div>
+                </section>
 
-        <section class="admin-view" id="admin-occurrences"><p class="admin-kicker">administração · outubro 2026</p><h1>Denúncias e ocorrências</h1><p class="admin-intro">4 abertas · linguagem neutra, acesso restrito e acompanhamento rastreável.</p><div class="admin-filter-row"><label class="admin-control">Prioridade<select><option>Todas</option><option>Alta</option><option>Média</option></select></label><label class="admin-control">Status<select><option>Abertas</option><option>Em análise</option></select></label><label class="admin-control">Categoria<select><option>Todas</option><option>Comunicação</option></select></label></div><article class="admin-card"><h2>Fila de ocorrências</h2><table><thead><tr><th>ID / abertura</th><th>Categoria</th><th>Prioridade</th><th>Estado</th><th>Responsável</th></tr></thead><tbody><tr><td>OC-004 · 19/10</td><td>Divergência de horário</td><td>Média</td><td>Em análise</td><td>Gabriel Sena Administrador</td></tr><tr><td>OC-003 · 18/10</td><td>Relato sobre conduta</td><td>Alta</td><td>Triagem restrita</td><td>Bruno Alves</td></tr><tr><td>OC-002 · 17/10</td><td>Comunicação</td><td>Média</td><td>Aguardando retorno</td><td>Gabriel Sena Administrador</td></tr><tr><td>OC-001 · 16/10</td><td>Dúvida de cancelamento</td><td>Baixa</td><td>Encaminhada</td><td>Bruno Alves</td></tr></tbody></table><p>Casos fictícios. Nenhum associado ao atendimento de Beto ou Júlia Fernandes.</p></article><div class="admin-columns"><div class="admin-stack"><article class="admin-card"><h2>OC-004 · divergência de horário</h2><em>Em análise · prioridade média</em><p>Referência: AMP-DEMO-1044<br>Família: FAM-•••81 · profissional: PRO-•••62<br>Responsável: Gabriel Sena Administrador · próximo retorno até 20/10 às 12h</p><p>Uma família relata diferença entre o horário combinado e o registro de início. O relato ainda não foi confirmado. A equipe está consultando os registros e solicitando esclarecimentos às partes.</p><div class="admin-note">Informações restritas<br><br>Sem conclusões ou atribuição de responsabilidade nesta etapa. Dados pessoais e anexos protegidos; acessos registrados conforme papel.</div><h3>Provas e documentos</h3><table><thead><tr><th>Arquivo</th><th>Proteção</th><th>Recebido</th></tr></thead><tbody><tr><td>ANX-004-A · registro de horário</td><td>Mascarado · consulta auditada</td><td>19/10 · 08h30</td></tr><tr><td>ANX-004-B · relato enviado</td><td>Restrito · sem prévia pública</td><td>19/10 · 08h32</td></tr></tbody></table><button class="admin-secondary" data-toast="Consulta de anexos protegidos registrada nesta demonstração.">Consultar anexos protegidos</button></article><article class="admin-card"><h2>Linha do tempo</h2><table><thead><tr><th>Horário</th><th>Autor</th><th>Registro</th></tr></thead><tbody><tr><td>19/10 · 08h30</td><td>FAM-•••81</td><td>Relato recebido</td></tr><tr><td>19/10 · 09h05</td><td>Gabriel Sena Administrador</td><td>Triagem → em análise</td></tr><tr><td>19/10 · 09h20</td><td>Gabriel Sena Administrador</td><td>Solicitados esclarecimentos</td></tr><tr><td>20/10 · até 12h</td><td>Gabriel Sena Administrador</td><td>Próximo passo: revisar retornos</td></tr></tbody></table></article></div><aside class="admin-aside"><article class="admin-card"><h2>Registrar próximo passo</h2><label class="admin-control">Nota interna<textarea>Aguardar esclarecimentos e comparar registros de horário.</textarea></label><label class="admin-control">Motivo da ação<textarea>Apuração inicial sem conclusão sobre responsabilidade.</textarea></label><button class="admin-primary" id="register-note">Registrar nota</button><button class="admin-secondary" data-toast="Encaminhamento preparado em modo demonstrativo.">Encaminhar</button><button class="admin-secondary" data-toast="Resolução requer confirmação fora da demonstração.">Resolver com motivo</button><div class="admin-note">Revisão antes da confirmação<br><br>Confirme ocorrência, responsável, motivo e ação. Nenhuma nota ou resolução nova foi aplicada nesta tela; o caso permanece aberto.</div></article></aside></div></section>
+                <section class="admin-view" id="admin-occurrences">
+                    <p class="admin-kicker">administração · outubro 2026</p>
+                    <h1>Denúncias e ocorrências</h1>
+                    <p class="admin-intro">4 abertas · linguagem neutra, acesso restrito e acompanhamento rastreável.
+                    </p>
+                    <div class="admin-filter-row"><label class="admin-control">Prioridade<select>
+                                <option>Todas</option>
+                                <option>Alta</option>
+                                <option>Média</option>
+                            </select></label><label class="admin-control">Status<select>
+                                <option>Abertas</option>
+                                <option>Em análise</option>
+                            </select></label><label class="admin-control">Categoria<select>
+                                <option>Todas</option>
+                                <option>Comunicação</option>
+                            </select></label></div>
+                    <article class="admin-card">
+                        <h2>Fila de ocorrências</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID / abertura</th>
+                                    <th>Categoria</th>
+                                    <th>Prioridade</th>
+                                    <th>Estado</th>
+                                    <th>Responsável</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OC-004 · 19/10</td>
+                                    <td>Divergência de horário</td>
+                                    <td>Média</td>
+                                    <td>Em análise</td>
+                                    <td>Gabriel Sena Administrador</td>
+                                </tr>
+                                <tr>
+                                    <td>OC-003 · 18/10</td>
+                                    <td>Relato sobre conduta</td>
+                                    <td>Alta</td>
+                                    <td>Triagem restrita</td>
+                                    <td>Bruno Alves</td>
+                                </tr>
+                                <tr>
+                                    <td>OC-002 · 17/10</td>
+                                    <td>Comunicação</td>
+                                    <td>Média</td>
+                                    <td>Aguardando retorno</td>
+                                    <td>Gabriel Sena Administrador</td>
+                                </tr>
+                                <tr>
+                                    <td>OC-001 · 16/10</td>
+                                    <td>Dúvida de cancelamento</td>
+                                    <td>Baixa</td>
+                                    <td>Encaminhada</td>
+                                    <td>Bruno Alves</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Casos fictícios. Nenhum associado ao atendimento de Beto ou Júlia Fernandes.</p>
+                    </article>
+                    <div class="admin-columns">
+                        <div class="admin-stack">
+                            <article class="admin-card">
+                                <h2>OC-004 · divergência de horário</h2><em>Em análise · prioridade média</em>
+                                <p>Referência: AMP-DEMO-1044<br>Família: FAM-•••81 · profissional:
+                                    PRO-•••62<br>Responsável: Gabriel Sena Administrador · próximo retorno até 20/10 às
+                                    12h</p>
+                                <p>Uma família relata diferença entre o horário combinado e o registro de início. O
+                                    relato ainda não foi confirmado. A equipe está consultando os registros e
+                                    solicitando esclarecimentos às partes.</p>
+                                <div class="admin-note">Informações restritas<br><br>Sem conclusões ou atribuição de
+                                    responsabilidade nesta etapa. Dados pessoais e anexos protegidos; acessos
+                                    registrados conforme papel.</div>
+                                <h3>Provas e documentos</h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Arquivo</th>
+                                            <th>Proteção</th>
+                                            <th>Recebido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ANX-004-A · registro de horário</td>
+                                            <td>Mascarado · consulta auditada</td>
+                                            <td>19/10 · 08h30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ANX-004-B · relato enviado</td>
+                                            <td>Restrito · sem prévia pública</td>
+                                            <td>19/10 · 08h32</td>
+                                        </tr>
+                                    </tbody>
+                                </table><button class="admin-secondary"
+                                    data-toast="Consulta de anexos protegidos registrada nesta demonstração.">Consultar
+                                    anexos protegidos</button>
+                            </article>
+                            <article class="admin-card">
+                                <h2>Linha do tempo</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Horário</th>
+                                            <th>Autor</th>
+                                            <th>Registro</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>19/10 · 08h30</td>
+                                            <td>FAM-•••81</td>
+                                            <td>Relato recebido</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19/10 · 09h05</td>
+                                            <td>Gabriel Sena Administrador</td>
+                                            <td>Triagem → em análise</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19/10 · 09h20</td>
+                                            <td>Gabriel Sena Administrador</td>
+                                            <td>Solicitados esclarecimentos</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20/10 · até 12h</td>
+                                            <td>Gabriel Sena Administrador</td>
+                                            <td>Próximo passo: revisar retornos</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </div>
+                        <aside class="admin-aside">
+                            <article class="admin-card">
+                                <h2>Registrar próximo passo</h2><label class="admin-control">Nota
+                                    interna<textarea>Aguardar esclarecimentos e comparar registros de horário.</textarea></label><label
+                                    class="admin-control">Motivo da
+                                    ação<textarea>Apuração inicial sem conclusão sobre responsabilidade.</textarea></label><button
+                                    class="admin-primary" id="register-note">Registrar nota</button><button
+                                    class="admin-secondary"
+                                    data-toast="Encaminhamento preparado em modo demonstrativo.">Encaminhar</button><button
+                                    class="admin-secondary"
+                                    data-toast="Resolução requer confirmação fora da demonstração.">Resolver com
+                                    motivo</button>
+                                <div class="admin-note">Revisão antes da confirmação<br><br>Confirme ocorrência,
+                                    responsável, motivo e ação. Nenhuma nota ou resolução nova foi aplicada nesta tela;
+                                    o caso permanece aberto.</div>
+                            </article>
+                        </aside>
+                    </div>
+                </section>
 
-        <section class="admin-view" id="admin-audit"><p class="admin-kicker">administração · outubro 2026</p><h1>Auditoria</h1><p class="admin-intro">Consulta e exportação de registros persistentes. Esta trilha não pode ser editada nem deletada.</p><div class="admin-note audit-note"><b>Trilha não deletável · somente consulta</b><br><br>Os eventos preservam ator, horário, entidade, antes/depois e motivo. Correções geram novos eventos referenciados; não substituem o histórico.</div><div class="admin-filter-row"><label class="admin-control">Ator<select><option>Todos os administradores</option></select></label><label class="admin-control">Data<input value="01–19/10/2026"></label><label class="admin-control">Entidade<select><option>Documento / conta / ocorrência</option></select></label></div><button class="admin-secondary" data-toast="Exportação de registros simulada. Nenhum arquivo foi gerado.">Exportar registros</button><article class="admin-card audit-table"><h2>Registros persistentes · amostra</h2><table><thead><tr><th>ID / data</th><th>Autor</th><th>Ação / entidade</th><th>Antes → depois</th><th>Motivo</th></tr></thead><tbody><tr><td>AUD-016 · 16/10 · 14h32</td><td>Gabriel Sena Administrador</td><td>Verificação · USR-028</td><td>Em análise → verificados</td><td>Identidade e certificado conferidos</td></tr><tr><td>AUD-018 · 18/10 · 15h10</td><td>Bruno Alves</td><td>Status da conta · USR-611</td><td>Ativa → suspensa</td><td>Revisão administrativa · SUP-611</td></tr><tr><td>AUD-019 · 19/10 · 09h05</td><td>Gabriel Sena Administrador</td><td>Análise · OC-004</td><td>Triagem → em análise</td><td>Apurar divergência de horário</td></tr><tr><td>AUD-020 · 19/10 · 10h12</td><td>Gabriel Sena Administrador</td><td>Documento · DOC-023</td><td>Pendente → em análise</td><td>Iniciar conferência do envio</td></tr><tr><td>AUD-021 · 19/10 · 10h20</td><td>Gabriel Sena Administrador</td><td>Consulta · USR-028</td><td>Sem alteração</td><td>Atendimento de suporte</td></tr></tbody></table><p>Eventos demonstrativos · horário de Brasília (UTC−3). Sem controles para excluir ou editar registros.</p></article><div class="admin-columns"><article class="admin-card"><h2>Detalhe · AUD-016</h2><span class="admin-pill ok">Persistente · somente leitura</span><h3>Verificação documental de Beto</h3><p>Data: 16/10/2026 às 14h32 (UTC−3)<br>Autor: Gabriel Sena Administrador<br>Entidade: USR-028 · identidade e certificado<br>Evento: DOC-VERIFY-028<br>Antes: documentos em análise<br>Depois: documentos verificados<br>Motivo: identidade e certificado enviados conferidos.</p><div class="admin-note">Sem nova validação clínica<br><br>A conferência já existente de Beto é preservada. O evento não atesta competência clínica nem garantia de segurança.</div><p>Origem: área administrativa · sessão SES-•••003<br>Referência do protocolo: DOC-028<br>Conteúdo sensível mascarado; consulta registrada.</p><button class="admin-secondary" data-toast="Consulta de entidade registrada nesta demonstração.">Consultar entidade</button></article><aside class="admin-aside"><article class="admin-card"><h2>Regras do histórico</h2><p>✓ Registros persistentes e não deletáveis<br>✓ Autor, data e motivo preservados<br>✓ Antes e depois consultáveis<br>✓ Exportação por permissão<br>✓ Retificações por novo evento</p></article><article class="admin-card"><h2>Acesso restrito</h2><p>Perfil atual: operações. Dados pessoais mascarados. A exportação e a consulta de anexos também deixam um registro de acesso.</p><p>Não há ação para alterar ou remover eventos nesta tela.</p></article></aside></div></section>
-      </main>
+                <section class="admin-view" id="admin-audit">
+                    <p class="admin-kicker">administração · outubro 2026</p>
+                    <h1>Auditoria</h1>
+                    <p class="admin-intro">Consulta e exportação de registros persistentes. Esta trilha não pode ser
+                        editada nem deletada.</p>
+                    <div class="admin-note audit-note"><b>Trilha não deletável · somente consulta</b><br><br>Os eventos
+                        preservam ator, horário, entidade, antes/depois e motivo. Correções geram novos eventos
+                        referenciados; não substituem o histórico.</div>
+                    <div class="admin-filter-row"><label class="admin-control">Ator<select>
+                                <option>Todos os administradores</option>
+                            </select></label><label class="admin-control">Data<input
+                                value="01–19/10/2026"></label><label class="admin-control">Entidade<select>
+                                <option>Documento / conta / ocorrência</option>
+                            </select></label></div><button class="admin-secondary"
+                        data-toast="Exportação de registros simulada. Nenhum arquivo foi gerado.">Exportar
+                        registros</button>
+                    <article class="admin-card audit-table">
+                        <h2>Registros persistentes · amostra</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID / data</th>
+                                    <th>Autor</th>
+                                    <th>Ação / entidade</th>
+                                    <th>Antes → depois</th>
+                                    <th>Motivo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AUD-016 · 16/10 · 14h32</td>
+                                    <td>Gabriel Sena Administrador</td>
+                                    <td>Verificação · USR-028</td>
+                                    <td>Em análise → verificados</td>
+                                    <td>Identidade e certificado conferidos</td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-018 · 18/10 · 15h10</td>
+                                    <td>Bruno Alves</td>
+                                    <td>Status da conta · USR-611</td>
+                                    <td>Ativa → suspensa</td>
+                                    <td>Revisão administrativa · SUP-611</td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-019 · 19/10 · 09h05</td>
+                                    <td>Gabriel Sena Administrador</td>
+                                    <td>Análise · OC-004</td>
+                                    <td>Triagem → em análise</td>
+                                    <td>Apurar divergência de horário</td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-020 · 19/10 · 10h12</td>
+                                    <td>Gabriel Sena Administrador</td>
+                                    <td>Documento · DOC-023</td>
+                                    <td>Pendente → em análise</td>
+                                    <td>Iniciar conferência do envio</td>
+                                </tr>
+                                <tr>
+                                    <td>AUD-021 · 19/10 · 10h20</td>
+                                    <td>Gabriel Sena Administrador</td>
+                                    <td>Consulta · USR-028</td>
+                                    <td>Sem alteração</td>
+                                    <td>Atendimento de suporte</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Eventos demonstrativos · horário de Brasília (UTC−3). Sem controles para excluir ou editar
+                            registros.</p>
+                    </article>
+                    <div class="admin-columns">
+                        <article class="admin-card">
+                            <h2>Detalhe · AUD-016</h2><span class="admin-pill ok">Persistente · somente leitura</span>
+                            <h3>Verificação documental de Beto</h3>
+                            <p>Data: 16/10/2026 às 14h32 (UTC−3)<br>Autor: Gabriel Sena Administrador<br>Entidade:
+                                USR-028 · identidade e certificado<br>Evento: DOC-VERIFY-028<br>Antes: documentos em
+                                análise<br>Depois: documentos verificados<br>Motivo: identidade e certificado enviados
+                                conferidos.</p>
+                            <div class="admin-note">Sem nova validação clínica<br><br>A conferência já existente de Beto
+                                é preservada. O evento não atesta competência clínica nem garantia de segurança.</div>
+                            <p>Origem: área administrativa · sessão SES-•••003<br>Referência do protocolo:
+                                DOC-028<br>Conteúdo sensível mascarado; consulta registrada.</p><button
+                                class="admin-secondary"
+                                data-toast="Consulta de entidade registrada nesta demonstração.">Consultar
+                                entidade</button>
+                        </article>
+                        <aside class="admin-aside">
+                            <article class="admin-card">
+                                <h2>Regras do histórico</h2>
+                                <p>✓ Registros persistentes e não deletáveis<br>✓ Autor, data e motivo preservados<br>✓
+                                    Antes e depois consultáveis<br>✓ Exportação por permissão<br>✓ Retificações por novo
+                                    evento</p>
+                            </article>
+                            <article class="admin-card">
+                                <h2>Acesso restrito</h2>
+                                <p>Perfil atual: operações. Dados pessoais mascarados. A exportação e a consulta de
+                                    anexos também deixam um registro de acesso.</p>
+                                <p>Não há ação para alterar ou remover eventos nesta tela.</p>
+                            </article>
+                        </aside>
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
-  </div>
-  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
-  <script src="../js/intranet.js"></script>
+    <div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
+    <script src="../js/intranet.js"></script>
 </body>
+
 </html>

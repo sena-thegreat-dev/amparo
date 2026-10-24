@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cadastro da família | Amparo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style/core.css">
+    <link rel="stylesheet" href="../style/acesso.css">
+</head>
+
+<body>
+    <div class="access-shell">
+        <aside class="access-aside"><a class="brand" href="../index.html">♡ amparo</a>
+            <div>
+                <p>cadastro da família</p>
+                <h1>Vamos conhecer a rotina de quem você ama.</h1>
+                <p>Essas informações ajudam a organizar sua primeira solicitação. Não inclua informações clínicas
+                    sensíveis neste protótipo.</p>
+            </div>
+        </aside>
+        <main class="access-main">
+            <section class="access-card">
+                <h2>Crie sua conta</h2>
+                <p>Campos com * são necessários para começar.</p>
+                <form data-registration-form class="form-grid"><label>Seu nome*<input required
+                            autocomplete="name"></label><label>CPF*<input required inputmode="numeric"
+                            placeholder="000.000.000-00"></label><label>E-mail*<input required type="email"
+                            autocomplete="email"></label><label>Telefone*<input required type="tel"
+                            autocomplete="tel"></label><label class="full">Nome de quem receberá o apoio*<input
+                            required></label><label>Faixa etária<select required>
+                            <option value="">Selecione</option>
+                            <option>60 a 69 anos</option>
+                            <option>70 a 79 anos</option>
+                            <option>80 anos ou mais</option>
+                        </select></label><label>Modalidade inicial<select required>
+                            <option>Companhia e rotina</option>
+                            <option>Atividades e passeios</option>
+                            <option>Acompanhamento noturno</option>
+                        </select></label><label class="full">Bairro e cidade*<input required
+                            placeholder="Ex.: Vila Olímpia, São Paulo/SP"></label><label class="full">O que seria
+                        importante no encontro?<textarea
+                            placeholder="Ex.: companhia no almoço, passeio leve ou apoio à rotina."></textarea></label><label
+                        class="checkbox full"><input required type="checkbox">Confirmo que os dados são verdadeiros e
+                        aceito os termos e a política de privacidade.</label>
+                    <div class="full submit-row"><button class="button" type="submit">Continuar para o acesso</button><a
+                            href="login.html">Já tenho uma conta</a></div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="../js/acesso.js"></script>
+</body>
+
+</html>

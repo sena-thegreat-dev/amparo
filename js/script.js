@@ -8,5 +8,11 @@ menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () 
 document.querySelectorAll('.faq-item button').forEach((button) => button.addEventListener('click', () => { const item = button.closest('.faq-item'); const willOpen = !item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach((faq) => { faq.classList.remove('open'); faq.querySelector('button').setAttribute('aria-expanded', 'false'); }); if (willOpen) { item.classList.add('open'); button.setAttribute('aria-expanded', 'true'); } }));
 document.querySelectorAll('.heart-button').forEach((button) => button.addEventListener('click', () => { const active = button.classList.toggle('active'); button.textContent = active ? '♥' : '♡'; button.setAttribute('aria-label', active ? 'Remover profissional dos salvos' : 'Salvar profissional'); }));
 document.querySelectorAll('[data-toast]').forEach((button) => button.addEventListener('click', () => showToast(button.dataset.toast)));
-document.querySelector('#search-form')?.addEventListener('submit', (event) => { event.preventDefault(); const location = document.querySelector('#location').value.trim() || 'sua região'; const mode = document.querySelector('#mode').value.toLowerCase(); document.querySelector('#search-feedback').textContent = `Encontramos profissionais para ${mode} em ${location}. Escolha um perfil para continuar.`; document.querySelector('#profissionais').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+document.querySelector('#search-form')?.addEventListener('submit', () => { sessionStorage.setItem('amparo-search', JSON.stringify({ location: document.querySelector('#location').value, mode: document.querySelector('#mode').value })); });
 window.matchMedia?.('(prefers-reduced-motion: reduce)').addEventListener?.('change', () => { document.documentElement.style.scrollBehavior = 'auto'; });
+document.querySelector('#use-location')?.addEventListener('click', () => {
+  const field = document.querySelector('#location');
+  if (!navigator.geolocation) { showToast('Geolocalização não está disponível neste navegador.'); return; }
+  field.value = 'Buscando sua localização…';
+  navigator.geolocation.getCurrentPosition(({ coords }) => { field.value = `${coords.latitude.toFixed(5)}, ${coords.longitude.toFixed(5)} · São Paulo/SP`; showToast('Localização aproximada preenchida.'); }, () => { field.value = ''; showToast('Não foi possível acessar sua localização. Escolha uma região da lista.'); }, { enableHighAccuracy: false, timeout: 10000 });
+});

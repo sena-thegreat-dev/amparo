@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cadastro profissional | Amparo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style/core.css">
+    <link rel="stylesheet" href="../style/acesso.css">
+</head>
+
+<body>
+    <div class="access-shell">
+        <aside class="access-aside"><a class="brand" href="../index.html">♡ amparo</a>
+            <div>
+                <p>cadastro profissional</p>
+                <h1>Seu trabalho, sua disponibilidade.</h1>
+                <p>Crie seu perfil e envie seus dados para análise. A conferência documental não é validação clínica.
+                </p>
+            </div>
+        </aside>
+        <main class="access-main">
+            <section class="access-card">
+                <h2>Faça parte do time</h2>
+                <p>Seu perfil só fica visível após a revisão documental.</p>
+                <form data-registration-form class="form-grid"><label>Nome completo*<input required
+                            autocomplete="name"></label><label>CPF*<input required inputmode="numeric"
+                            placeholder="000.000.000-00"></label><label>E-mail*<input required
+                            type="email"></label><label>Telefone*<input required type="tel"></label><label>COREN*<input
+                            required placeholder="COREN-SP 123456"></label><label>Experiência<select required>
+                            <option value="">Selecione</option>
+                            <option>Até 1 ano</option>
+                            <option>2 a 5 anos</option>
+                            <option>Mais de 5 anos</option>
+                        </select></label><label>Região de atuação*<input required
+                            placeholder="Ex.: São Paulo/SP"></label><label>Disponibilidade inicial<select required>
+                            <option>Manhã</option>
+                            <option>Tarde</option>
+                            <option>Noite</option>
+                            <option>Variável</option>
+                        </select></label><label class="full">Serviços que oferece*<textarea required
+                            placeholder="Ex.: companhia, apoio à rotina, passeios e acompanhamento não clínico."></textarea></label><label
+                        class="checkbox full"><input required type="checkbox">Confirmo que as informações profissionais
+                        são verdadeiras e autorizo a análise documental.</label><label class="checkbox full"><input
+                            required type="checkbox">Li os termos de atuação independente e a política de
+                        privacidade.</label>
+                    <div class="full submit-row"><button class="button" type="submit">Enviar cadastro para
+                            análise</button><a href="login.html">Já tenho uma conta</a></div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="../js/acesso.js"></script>
+</body>
+
+</html>

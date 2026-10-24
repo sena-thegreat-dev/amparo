@@ -14,6 +14,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style/core.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/mapa.css">
+    <link rel="stylesheet" href="style/cursos.css">
 </head>
 
 <body data-page="landing">
@@ -27,7 +29,7 @@
                     funciona</a><a href="#modalidades">Modalidades</a><a href="#profissionais">Para profissionais</a>
             </nav>
             <div class="nav-actions">
-                <a class="text-button" href="pages/familia.html">Entrar</a>
+                <a class="text-button" href="pages/login.html">Entrar</a>
                 <a class="button button-small"
                     href="#encontrar">Encontrar cuidador
                 </a>
@@ -46,7 +48,7 @@
                         <a class="button" href="#encontrar">
                             Encontrar cuidador
                         </a>
-                        <a class="button button-light" href="pages/cuidador.html">
+                        <a class="button button-light" href="pages/cadastro-cuidador.html">
                             Sou cuidador
                         </a>
                     </div>
@@ -59,9 +61,10 @@
             <div class="container">
                 <p class="eyebrow">encontre por região</p>
                 <h2>Um apoio perto da sua rotina</h2>
-                <form class="search-box" id="search-form">
-                    <label>Onde você precisa de apoio?<input id="location" name="location"
-                            value="Vila Olímpia, São Paulo/SP" autocomplete="address-level2"></label>
+                <form class="search-box" id="search-form" action="pages/cadastro-usuario.html">
+                    <label>Onde você precisa de apoio?<input id="location" name="location" list="sp-regions"
+                            value="Vila Olímpia, São Paulo/SP" autocomplete="address-level2"><button class="location-button" id="use-location" type="button">Usar minha localização</button></label>
+                    <datalist id="sp-regions"><option value="Vila Olímpia, São Paulo/SP"><option value="Guaianases, São Paulo/SP"><option value="Moema, São Paulo/SP"><option value="Pinheiros, São Paulo/SP"><option value="Tatuapé, São Paulo/SP"><option value="Saúde, São Paulo/SP"><option value="Aclimação, São Paulo/SP"><option value="Santo Amaro, São Paulo/SP"></datalist>
                     <label>Data e disponibilidade<select id="availability" name="availability">
                             <option>17/10/2026 - 15h às 16h</option>
                             <option>Esta semana</option>
@@ -129,18 +132,19 @@
             <div class="container">
                 <p class="eyebrow">profissionais perto de você</p>
                 <h2>Conheça quem pode fazer parte da sua rede</h2>
+                <div class="learning-banner"><div><strong>Formação contínua para cuidadores</strong><p>Profissionais podem acessar e-books e videoaulas e receber certificado ao concluir os cursos.</p></div><a class="button button-small" href="pages/cadastro-cuidador.html">Quero me desenvolver</a></div>
                 <div class="professionals-grid">
                     <article class="professional-card">
-                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Renato">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Beto">
                             <div>
-                                <h3>Renato</h3>
+                                <h3>Beto</h3>
                                 <p>Cuidador independente</p>
-                            </div><button class="heart-button" aria-label="Salvar Renato">♡</button>
+                            </div><button class="heart-button" aria-label="Salvar Beto">♡</button>
                         </div>
                         <p class="rating">★ 4,9 <span>· 21 avaliações</span></p>
                         <p class="professional-description">Companhia, conversa e apoio em passeios e atividades.</p>
                         <div class="card-footer"><strong>R$ 35 <small>/ hora</small></strong><button
-                                class="text-button card-action" data-toast="Perfil de Renato salvo para você.">Ver
+                                class="text-button card-action" data-toast="Perfil de Beto salvo para você.">Ver
                                 perfil</button></div>
                     </article>
                     <article class="professional-card">
@@ -170,6 +174,10 @@
                                 class="text-button card-action" data-toast="Perfil de Gabriel salvo para você.">Ver
                                 perfil</button></div>
                     </article>
+                    <br><br>
+                    <a class="button button-small"
+                        href="pages/cadastro-cuidador.html">Faça parte do nosso time
+                    </a>
                 </div>
             </div>
         </section>
@@ -219,7 +227,7 @@
                         <h3>Mais clareza para organizar seus encontros.</h3>
                         <p>Você escolhe horários, valores e a região onde deseja atuar. A Amparo aproxima você de
                             famílias que procuram por companhia e apoio no dia a dia.</p>
-                    </div><a href="pages/cuidador.html" class="button">Quero me cadastrar</a>
+                    </div><a href="pages/cadastro-cuidador.html" class="button">Quero me cadastrar</a>
                 </div>
             </div>
         </section>
