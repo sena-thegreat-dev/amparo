@@ -14,11 +14,102 @@
     <link rel="stylesheet" href="../style/core.css">
     <link rel="stylesheet" href="../style/familia.css">
     <link rel="stylesheet" href="../style/mapa.css">
+    <link rel="stylesheet" href="../style/familia-simples.css">
 </head>
 
 <body data-page="family-dashboard">
-    <a class="skip-link" href="#family-content">Pular para o conteúdo</a>
-    <div class="app-shell">
+    <a class="skip-link" href="#simple-content">Pular para o conteúdo</a>
+    <div class="simple-family" id="family-simple">
+        <header class="simple-header"><a href="../index.html" class="simple-brand">♡ amparo</a><a
+                href="../index.html">Sair</a></header>
+        <main id="simple-content" class="simple-main" tabindex="-1">
+            <section data-screen="overview">
+                <h1 id="family-welcome">Olá! Como podemos ajudar?</h1>
+                <p id="family-intro">Encontre apoio para o seu dia a dia.</p>
+                <div class="simple-grid"><button class="simple-choice" type="button" data-open="search"><span
+                            aria-hidden="true">⌕</span><strong>Encontrar cuidador</strong><small>Conheça profissionais
+                            que atendem na sua região.</small></button><button class="simple-choice" type="button"
+                        data-open="requests"><span aria-hidden="true">▣</span><strong>Meus
+                            pedidos</strong><small>Acompanhe seus pedidos e atendimentos.</small></button></div>
+                <article class="simple-card">
+                    <h2>Precisa de ajuda?</h2>
+                    <p>Encontre orientações sobre o uso da Amparo.</p><button class="simple-secondary" type="button"
+                        data-open="help">Ver opções de ajuda</button>
+                </article>
+            </section>
+            <section data-screen="search" hidden><button class="simple-back" type="button" data-open="overview">← Voltar
+                    ao início</button>
+                <h1>Encontre seu cuidador</h1>
+                <p>Confira o serviço e a região desejados.</p>
+                <form id="simple-filter" class="simple-card simple-fields"><label>Serviço<select name="service">
+                            <option>Banho e higiene</option>
+                            <option>Troca de curativos</option>
+                            <option>Acompanhamento</option>
+                            <option>Cuidados do dia a dia</option>
+                        </select></label><div class="address-field" data-address><label for="family-search-location">Bairro e cidade</label><div class="address-input-wrap"><input id="family-search-location" name="location" data-address-input autocomplete="off" placeholder="Informe sua região"><div data-address-results hidden></div></div><div class="address-actions"><button type="button" class="location-button" data-address-search>Buscar endereço</button><button type="button" class="location-button" data-address-geolocate>Usar minha localização</button></div><span data-address-status role="status"></span><small>Endereços por <a href="https://www.geoapify.com/">Geoapify</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></small></div><button class="simple-primary"
+                        type="submit">Atualizar busca</button></form>
+                <div id="simple-results" aria-live="polite"></div>
+                <details class="simple-card">
+                    <summary>Ver mapa da região</summary><iframe id="simple-map" title="Mapa ilustrativo da região"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=São%20Paulo%2C%20SP&output=embed"></iframe>
+                </details>
+            </section>
+            <section data-screen="profile" hidden><button class="simple-back" type="button" data-open="search">← Voltar
+                    à busca</button>
+                <article class="simple-card">
+                    <div class="simple-person"><img src="../img/retrato-enfermeiro.webp" alt="">
+                        <div>
+                            <h1 id="simple-profile-name"></h1>
+                            <p id="simple-profile-location"></p>
+                        </div>
+                    </div>
+                    <h2>Como posso ajudar</h2>
+                    <p id="simple-profile-services"></p><button class="simple-primary" type="button"
+                        data-open="request">Solicitar atendimento</button>
+                </article>
+            </section>
+            <section data-screen="request" hidden><button class="simple-back" type="button" data-open="profile">← Voltar
+                    ao perfil</button>
+                <h1>Quando e onde precisa de ajuda?</h1>
+                <p>Confira os detalhes antes de continuar.</p>
+                <form id="simple-request" class="simple-card">
+                    <div class="simple-fields"><label>Data<input name="date" type="date"
+                                required></label><label>Horário<input name="time" type="time" required></label></div>
+                    <label>Endereço<input name="address" required autocomplete="street-address"></label><label>Alguma
+                        informação importante? <textarea name="notes" rows="3"
+                            placeholder="Opcional"></textarea></label><button class="simple-primary"
+                        type="submit">Revisar pedido</button>
+                </form>
+            </section>
+            <section data-screen="review" hidden><button class="simple-back" type="button" data-open="request">← Alterar
+                    informações</button>
+                <h1>Confira seu pedido</h1>
+                <article class="simple-card" id="simple-review"></article><button class="simple-primary" type="button"
+                    id="simulate-request">Confirmar pedido</button>
+            </section>
+            <section data-screen="sent" hidden>
+                <div class="simple-notice">✓ Pedido preparado</div>
+                <h1>Confira seus pedidos</h1>
+                <button class="simple-primary" type="button"
+                    data-open="requests">Ver meus pedidos</button>
+            </section>
+            <section data-screen="requests" hidden><button class="simple-back" type="button" data-open="overview">←
+                    Voltar ao início</button>
+                <h1>Meus pedidos</h1>
+                <div id="simple-requests" class="simple-card"></div><button class="simple-secondary" type="button"
+                    data-open="search">Encontrar cuidador</button>
+            </section>
+            <section data-screen="help" hidden><button class="simple-back" type="button" data-open="overview">← Voltar
+                    ao início</button>
+                <h1>Como podemos ajudar?</h1>
+                <article class="simple-card">
+                    <p>O canal de atendimento ainda não está disponível.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+    <div class="app-shell" hidden>
         <aside class="sidebar" id="sidebar">
             <a class="brand" href="../index.html"><span>♡</span> amparo</a>
             <p class="sidebar-label">área família</p>
@@ -86,7 +177,7 @@
                             </article>
                             <h2 class="section-title">Seus favoritos</h2>
                             <div class="mini-profiles">
-                                <article class="profile-mini"><img src="../img/retrato-enfermeiro.png" alt="Beto">
+                                <article class="profile-mini"><img src="../img/retrato-enfermeiro.webp" alt="Beto">
                                     <div>
                                         <h3>Beto</h3>
                                         <p>6 anos de experiência · Guaianases</p><small>★ 4,9 · 32 avaliações</small>
@@ -97,7 +188,8 @@
                                     <footer><strong>R$ 35 <small>/hora</small></strong><button class="secondary"
                                             data-go="profile">Ver perfil</button></footer>
                                 </article>
-                                <article class="profile-mini"><img src="../img/retrato-enfermeiro.png" alt="Cuidador 2">
+                                <article class="profile-mini"><img src="../img/retrato-enfermeiro.webp"
+                                        alt="Cuidador 2">
                                     <div>
                                         <h3>Cuidador 2</h3>
                                         <p>4 anos de experiência · Saúde</p><small>★ 4,8 · 32 avaliações</small>
@@ -155,7 +247,8 @@
                                 <iframe id="region-map" class="region-map" title="Mapa da região de busca"
                                     loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                                     src="https://www.google.com/maps?q=Guaianases%2C%20S%C3%A3o%20Paulo%2C%20SP&output=embed"></iframe>
-                                <small>Mapa público por região. Localizações de profissionais são aproximadas; endereços pessoais não são exibidos.</small>
+                                <small>Mapa público por região. Localizações de profissionais são aproximadas; endereços
+                                    pessoais não são exibidos.</small>
                             </article>
                         </div>
                     </div>
@@ -169,7 +262,7 @@
                             <p class="subtitle">Presença cuidadosa para os pequenos momentos do dia.</p>
                         </div><button class="secondary heart-save">♡ &nbsp; Salvar nos favoritos</button>
                     </div>
-                    <article class="profile-header card"><img src="../img/retrato-enfermeiro.png" alt="Beto">
+                    <article class="profile-header card"><img src="../img/retrato-enfermeiro.webp" alt="Beto">
                         <div>
                             <h2>Beto</h2>
                             <p>Guaianases · São Paulo/SP · 38 anos</p><strong>★ 4,9 · 32 avaliações · 46 serviços
@@ -247,7 +340,7 @@
                         <aside class="right-stack">
                             <article class="card request-summary">
                                 <h2>Resumo da solicitação</h2>
-                                <div class="person-line"><img src="../img/retrato-enfermeiro.png" alt="Beto">
+                                <div class="person-line"><img src="../img/retrato-enfermeiro.webp" alt="Beto">
                                     <div><b>Beto</b><span>Companhia e apoio à rotina</span></div>
                                 </div>
                                 <hr>
@@ -325,7 +418,7 @@
                     <div class="two-columns">
                         <div class="content-stack">
                             <article class="card contract-card">
-                                <div class="person-line"><img src="../img/retrato-enfermeiro.png" alt="Beto">
+                                <div class="person-line"><img src="../img/retrato-enfermeiro.webp" alt="Beto">
                                     <div>
                                         <h2>Beto</h2><span>Companhia e apoio à rotina · Júlia
                                             Fernandes</span><em>Aguardando aceite</em>
@@ -479,7 +572,7 @@
                         </article>
                         <aside class="right-stack">
                             <article class="card">
-                                <h2>Seu encontro</h2><img class="avatar-large" src="../img/retrato-enfermeiro.png"
+                                <h2>Seu encontro</h2><img class="avatar-large" src="../img/retrato-enfermeiro.webp"
                                     alt="Beto">
                                 <h3>Beto</h3><span class="tag">Concluído</span>
                                 <p>18/10 · 4h · R$ 140,00<br>Pagamento capturado</p>
@@ -497,7 +590,10 @@
         </div>
     </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="../js/familia.js"></script>
+    <script src="../js/config-endereco.js"></script>
+    <script src="../js/endereco.js"></script>
+    <script src="../js/profissionais-demo.js"></script>
+    <script src="../js/familia-simples.js"></script>
 </body>
 
 </html>

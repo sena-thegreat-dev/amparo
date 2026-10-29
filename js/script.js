@@ -10,10 +10,4 @@ document.querySelectorAll('.heart-button').forEach((button) => button.addEventLi
 document.querySelectorAll('[data-toast]').forEach((button) => button.addEventListener('click', () => showToast(button.dataset.toast)));
 document.querySelector('#search-form')?.addEventListener('submit', () => { sessionStorage.setItem('amparo-search', JSON.stringify({ location: document.querySelector('#location').value, mode: document.querySelector('#mode').value })); });
 window.matchMedia?.('(prefers-reduced-motion: reduce)').addEventListener?.('change', () => { document.documentElement.style.scrollBehavior = 'auto'; });
-document.querySelector('#use-location')?.addEventListener('click', () => {
-  const field = document.querySelector('#location');
-  if (!navigator.geolocation) { showToast('Geolocalização não está disponível neste navegador.'); return; }
-  field.value = 'Buscando sua localização…';
-  navigator.geolocation.getCurrentPosition(({ coords }) => { field.value = `${coords.latitude.toFixed(5)}, ${coords.longitude.toFixed(5)} · São Paulo/SP`; showToast('Localização aproximada preenchida.'); }, () => { field.value = ''; showToast('Não foi possível acessar sua localização. Escolha uma região da lista.'); }, { enableHighAccuracy: false, timeout: 10000 });
-});
 document.querySelectorAll('[data-open-services]').forEach((button) => button.addEventListener('click', () => { const chooser = document.querySelector('#escolher-servico'); chooser.hidden = false; chooser.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));

@@ -23,7 +23,7 @@ body {
     padding: 48px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background: #376c5d;
     color: #fff
 }
@@ -108,7 +108,8 @@ body {
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px
+    gap: 16px;
+    align-items: start
 }
 
 .full {
@@ -179,7 +180,18 @@ textarea {
     font-weight: 700
 }
 
+.care-choice-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:24px 0 }
+.care-choice { display:flex; flex-direction:column; align-items:flex-start; gap:10px; min-height:170px; padding:22px; border:2px solid var(--line); border-radius:16px; background:#fff; color:var(--ink); text-align:left }
+.care-choice:hover { border-color:var(--green) }
+.care-choice span { font-size:2rem; color:var(--green) }
+.care-choice strong { font-size:1.3rem }
+.care-choice small { font-size:1rem; line-height:1.4 }
+.access-back { min-height:48px; padding:10px 18px; border:1px solid var(--green); border-radius:9px; background:#fff; color:var(--green); font-weight:700; margin-bottom:18px }
+#registration-step .submit-row .button { min-height:52px; padding:14px 28px; font-size:1.1rem }
+#registration-step label { font-size:1rem }
+
 @media(max-width:780px) {
+    .care-choice-grid { grid-template-columns:1fr }
     .access-shell {
         grid-template-columns: 1fr
     }

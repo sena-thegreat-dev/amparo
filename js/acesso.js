@@ -8,8 +8,8 @@ function setRole(value) {
     if (!role || !label || !credential) return;
     role.value = value;
     buttons.forEach(b => b.classList.toggle('active', b.dataset.role === value));
-    const labels = { family: 'CPF', caregiver: 'COREN', admin: 'Login administrativo' };
-    const placeholders = { family: '000.000.000-00', caregiver: 'COREN-SP 123456', admin: 'admin' };
+    const labels = { family: 'CPF', caregiver: 'CPF', admin: 'Login administrativo' };
+    const placeholders = { family: '000.000.000-00', caregiver: '000.000.000-00', admin: 'admin' };
     label.textContent = labels[value];
     credential.placeholder = placeholders[value];
     credential.inputMode = value === 'family' ? 'numeric' : 'text';

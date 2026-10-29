@@ -32,8 +32,7 @@
             </nav>
             <div class="nav-actions">
                 <a class="text-button" href="pages/login.html">Entrar</a>
-                <a class="button button-small" href="#encontrar">Encontrar cuidador
-                </a>
+                <button class="button button-small" type="button" data-open-services>Encontrar cuidador</button>
             </div>
         </div>
     </header>
@@ -53,7 +52,7 @@
                             Sou cuidador
                         </a>
                     </div>
-                    <p class="fine-print">Apoio não clínico. Não inclui procedimentos médicos ou de enfermagem.</p>
+                    <p class="fine-print">Cada serviço deve ser realizado por profissional com habilitação adequada.</p>
                 </div>
                 <img class="hero-image" src="img/fundo-index.jpg" alt="Uma cuidadora conversa com uma senhora em casa">
             </div>
@@ -84,10 +83,7 @@
                 <p class="eyebrow">encontre por região</p>
                 <h2>Um apoio perto da sua rotina</h2>
                 <form class="search-box" id="search-form" action="pages/cadastro-usuario.html">
-                    <label>Onde você precisa de apoio?<input id="location" name="location" list="sp-regions"
-                            value="Vila Olímpia, São Paulo/SP" autocomplete="address-level2"><button
-                            class="location-button" id="use-location" type="button">Usar minha
-                            localização</button></label>
+                    <div class="address-field" data-address><label for="location">Onde você precisa de apoio?</label><div class="address-input-wrap"><input id="location" name="location" data-address-input value="Vila Olímpia, São Paulo/SP" autocomplete="off"><div data-address-results hidden></div></div><div class="address-actions"><button class="location-button" id="use-location" data-address-geolocate type="button">Usar minha localização</button><button class="location-button" data-address-search type="button">Buscar endereço</button></div><span data-address-status role="status"></span><small>Endereços por <a href="https://www.geoapify.com/">Geoapify</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></small></div>
                     <datalist id="sp-regions">
                         <option value="Vila Olímpia, São Paulo/SP">
                         <option value="Guaianases, São Paulo/SP">
@@ -173,7 +169,7 @@
                 </div>
                 <div class="professionals-grid">
                     <article class="professional-card">
-                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Beto">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.webp" alt="Foto de perfil de Beto">
                             <div>
                                 <h3>Beto</h3>
                                 <p>Cuidador independente</p>
@@ -186,7 +182,7 @@
                                 perfil</button></div>
                     </article>
                     <article class="professional-card">
-                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Cláudia">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.webp" alt="Foto de perfil de Cláudia">
                             <div>
                                 <h3>Cláudia</h3>
                                 <p>Cuidadora independente</p>
@@ -200,7 +196,7 @@
                                 perfil</button></div>
                     </article>
                     <article class="professional-card">
-                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Gabriel">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.webp" alt="Foto de perfil de Gabriel">
                             <div>
                                 <h3>Gabriel</h3>
                                 <p>Cuidador independente</p>
@@ -325,6 +321,8 @@
             atendimento médico, de enfermagem ou outros serviços de saúde.</div>
     </footer>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="js/config-endereco.js"></script>
+    <script src="js/endereco.js"></script>
     <script src="js/script.js"></script>
 </body>
 

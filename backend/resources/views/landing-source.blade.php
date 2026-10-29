@@ -131,7 +131,7 @@
                 <h2>Conheça quem pode fazer parte da sua rede</h2>
                 <div class="professionals-grid">
                     <article class="professional-card">
-                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Renato">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.webp" alt="Foto de perfil de Renato">
                             <div>
                                 <h3>Renato</h3>
                                 <p>Cuidador independente</p>
@@ -144,7 +144,7 @@
                                 perfil</button></div>
                     </article>
                     <article class="professional-card">
-                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Cláudia">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.webp" alt="Foto de perfil de Cláudia">
                             <div>
                                 <h3>Cláudia</h3>
                                 <p>Cuidadora independente</p>
@@ -158,7 +158,7 @@
                                 perfil</button></div>
                     </article>
                     <article class="professional-card">
-                        <div class="profile-line"><img src="img/retrato-enfermeiro.png" alt="Foto de perfil de Gabriel">
+                        <div class="profile-line"><img src="img/retrato-enfermeiro.webp" alt="Foto de perfil de Gabriel">
                             <div>
                                 <h3>Gabriel</h3>
                                 <p>Cuidador independente</p>

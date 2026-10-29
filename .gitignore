@@ -11,3 +11,6 @@
 /vendor/
 /storage/logs/
 /public/build/
+
+# Configuração local da chave de navegador
+/js/config-endereco.js

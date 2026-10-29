@@ -12,51 +12,67 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../style/core.css">
     <link rel="stylesheet" href="../style/acesso.css">
+    <link rel="stylesheet" href="../style/mapa.css">
 </head>
 
 <body>
     <div class="access-shell">
         <aside class="access-aside"><a class="brand" href="../index.html">♡ amparo</a>
             <div>
-                <p>cadastro da família</p>
                 <h1>Vamos conhecer a rotina de quem você ama.</h1>
-                <p>Essas informações ajudam a organizar sua primeira solicitação. Não inclua informações clínicas
-                    sensíveis neste protótipo.</p>
             </div>
         </aside>
         <main class="access-main">
             <section class="access-card">
-                <h2>Crie sua conta</h2>
-                <p>Campos com * são necessários para começar.</p>
+                <div id="care-choice">
+                    <h2>Para quem você procura cuidado?</h2>
+                    <p>Escolha a opção que combina com você.</p>
+                    <div class="care-choice-grid">
+                        <button type="button" class="care-choice" data-care-for="self"><span aria-hidden="true">♡</span><strong>Para mim</strong><small>Quero encontrar alguém para me ajudar.</small></button>
+                        <button type="button" class="care-choice" data-care-for="other"><span aria-hidden="true">♧</span><strong>Para outra pessoa</strong><small>Estou procurando para um familiar ou outra pessoa.</small></button>
+                    </div>
+                    <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
+                </div>
+                <div id="registration-step" hidden>
+                <button type="button" class="access-back" id="back-to-choice">← Voltar</button>
+                <h2>Vamos começar?</h2>
+                <p>Preencha os campos para continuar.</p>
                 <p class="registration-choice" id="selected-service" hidden aria-live="polite"></p>
-                <form data-registration-form class="form-grid"><label>Seu nome*<input required
-                            autocomplete="name"></label><label>CPF*<input required inputmode="numeric"
-                            placeholder="000.000.000-00"></label><label>E-mail*<input required type="email"
-                            autocomplete="email"></label><label>Telefone*<input required type="tel"
-                            autocomplete="tel"></label><label class="full">Nome de quem receberá o apoio*<input
-                            required></label><label>Faixa etária<select required>
-                            <option value="">Selecione</option>
-                            <option>60 a 69 anos</option>
-                            <option>70 a 79 anos</option>
-                            <option>80 anos ou mais</option>
-                        </select></label><label>Modalidade inicial<select name="service" required>
+                <form data-family-registration class="form-grid">
+                    <label>
+                        Seu nome*
+                        <input name="name" placeholder="Como podemos chamar você?" required autocomplete="name">
+                    </label>
+                    <label>
+                        Telefone*
+                        <input name="phone" placeholder="(11) 99999-9999" required type="tel" autocomplete="tel">
+                    </label>
+                    <label>
+                        CPF*
+                        <input name="cpf" placeholder="000.000.000-00" required type="text" autocomplete="cpf">
+                    </label>
+                    <label>
+                        Crie uma senha*
+                        <input name="senha" placeholder="Sua senha" required type="password" autocomplete="password">
+                    </label>
+                    <div class="full form-grid" id="recipient-fields" hidden><label>Nome de quem receberá o cuidado*<input name="recipient"></label><label>Qual é sua relação?<select name="relationship"><option value="">Selecione</option><option>Filho(a)</option><option>Familiar</option><option>Outra pessoa</option></select></label></div>
+                    <label>Serviço desejado<select name="service" required>
                             <option>Banho e higiene</option>
                             <option>Troca de curativos</option>
                             <option>Acompanhamento</option>
                             <option>Cuidados do dia a dia</option>
-                        </select></label><label class="full">Bairro e cidade*<input required
-                            placeholder="Ex.: Vila Olímpia, São Paulo/SP"></label><label class="full">O que seria
-                        importante no encontro?<textarea
-                            placeholder="Ex.: companhia no almoço, passeio leve ou apoio à rotina."></textarea></label><label
-                        class="checkbox full"><input required type="checkbox">Confirmo que os dados são verdadeiros e
-                        aceito os termos e a política de privacidade.</label>
-                    <div class="full submit-row"><button class="button" type="submit">Continuar para o acesso</button><a
+                        </select></label><div class="address-field" data-address><label for="registration-location">Bairro e cidade*</label><div class="address-input-wrap"><input id="registration-location" name="location" data-address-input required autocomplete="off" placeholder="Ex.: São Paulo/SP"><div data-address-results hidden></div></div><div class="address-actions"><button type="button" class="location-button" data-address-search>Buscar endereço</button><button type="button" class="location-button" data-address-geolocate>Usar minha localização</button></div><span data-address-status role="status"></span><small>Endereços por <a href="https://www.geoapify.com/">Geoapify</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></small></div>
+                    <div class="full submit-row"><button class="button" type="submit">Continuar</button><a
                             href="login.html">Já tenho uma conta</a></div>
                 </form>
+                </div>
             </section>
         </main>
     </div>
+    <script src="../js/config-endereco.js"></script>
+    <script src="../js/endereco.js"></script>
     <script src="../js/acesso.js"></script>
+    <script src="../js/cadastro-familia.js"></script>
 </body>
 
 </html>
