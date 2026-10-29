@@ -69,6 +69,16 @@ body {
     line-height: 1.55
 }
 
+.registration-choice {
+    padding: 13px 15px;
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    background: #edf5ef;
+    color: #194b3d !important;
+    font-weight: 700;
+    font-size: 1rem
+}
+
 .role-switch {
     display: flex;
     gap: 8px;

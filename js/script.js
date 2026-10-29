@@ -16,3 +16,4 @@ document.querySelector('#use-location')?.addEventListener('click', () => {
   field.value = 'Buscando sua localização…';
   navigator.geolocation.getCurrentPosition(({ coords }) => { field.value = `${coords.latitude.toFixed(5)}, ${coords.longitude.toFixed(5)} · São Paulo/SP`; showToast('Localização aproximada preenchida.'); }, () => { field.value = ''; showToast('Não foi possível acessar sua localização. Escolha uma região da lista.'); }, { enableHighAccuracy: false, timeout: 10000 });
 });
+document.querySelectorAll('[data-open-services]').forEach((button) => button.addEventListener('click', () => { const chooser = document.querySelector('#escolher-servico'); chooser.hidden = false; chooser.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
