@@ -491,33 +491,6 @@ h3 {
     box-shadow: var(--shadow)
 }
 
-.payment-section {
-    background: #fff
-}
-
-.payment-grid {
-    grid-template-columns: repeat(3, 1fr)
-}
-
-.payment-grid article {
-    padding: 22px;
-    border: 1px solid #edf0ee;
-    border-radius: 10px
-}
-
-.payment-grid span {
-    color: #778386;
-    font-size: 11px
-}
-
-.payment-grid strong {
-    display: block;
-    margin: 7px 0 3px;
-    color: var(--ink-deep);
-    font-family: Manrope, sans-serif;
-    font-size: 25px
-}
-
 .work-card {
     display: flex;
     align-items: center;
