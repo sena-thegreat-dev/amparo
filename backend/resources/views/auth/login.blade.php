@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Entrar | Amparo</title><link rel="stylesheet" href="{{ asset('style/core.css') }}"><link rel="stylesheet" href="{{ asset('style/acesso.css') }}"></head>
+<body><div class="access-shell"><aside class="access-aside"><a class="brand" href="{{ route('landing') }}">♡ amparo</a><h1>Seu cuidado, no lugar certo.</h1></aside><main class="access-main"><section class="access-card"><h2>Entrar</h2><p>Use seu CPF ou e-mail e sua senha.</p>
+@if ($errors->any())<div class="error" role="alert">{{ $errors->first() }}</div>@endif
+<form method="POST" action="{{ route('login.store') }}" class="form-grid">@csrf<label class="full">CPF ou e-mail<input name="credential" value="{{ old('credential') }}" required autocomplete="username"></label><label class="full">Senha<input name="password" type="password" required autocomplete="current-password"></label><div class="full submit-row"><button class="button" type="submit">Entrar</button></div></form><p><a href="{{ route('register', 'familia') }}">Criar conta para buscar cuidado</a></p><p><a href="{{ route('register', 'cuidador') }}">Criar conta profissional</a></p></section></main></div></body></html>

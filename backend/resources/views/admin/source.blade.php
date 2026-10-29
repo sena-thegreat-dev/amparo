@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../style/intranet.css">
 </head>
 <body data-page="admin-dashboard" data-active-view="{{ $active }}">
+  <div style="padding:12px;background:#eaf2ed;color:#183a34">Conta: {{ auth()->user()->name }} · A área abaixo ainda contém dados demonstrativos. <form action="{{ route('logout') }}" method="post" style="display:inline">@csrf<button type="submit">Sair</button></form></div>
   <a class="skip-link" href="#admin-content">Pular para o conteúdo</a>
   <div class="admin-app">
     <aside class="admin-sidebar" id="admin-sidebar">

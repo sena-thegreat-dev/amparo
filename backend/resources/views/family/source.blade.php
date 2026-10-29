@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../style/familia.css">
 </head>
 <body data-page="family-dashboard" data-active-view="{{ $active }}">
+  <div style="padding:12px;background:#eaf2ed;color:#183a34">Conta: {{ auth()->user()->name }} · A área abaixo ainda contém dados demonstrativos. <form action="{{ route('logout') }}" method="post" style="display:inline">@csrf<button type="submit">Sair</button></form></div>
   <a class="skip-link" href="#family-content">Pular para o conteúdo</a>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">

@@ -2,15 +2,21 @@
 
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CaregiverDashboardController;
-use App\Http\Controllers\DemoSessionController;
 use App\Http\Controllers\FamilyDashboardController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', LandingController::class)->name('landing');
-Route::get('/acesso', [DemoSessionController::class, 'create'])->name('login');
-Route::post('/acesso', [DemoSessionController::class, 'store'])->middleware('throttle:6,1')->name('login.store');
+Route::middleware('guest')->group(function (): void {
+    Route::get('/acesso', [SessionController::class, 'create'])->name('login');
+    Route::post('/acesso', [SessionController::class, 'store'])->middleware('throttle:6,1')->name('login.store');
+    Route::get('/cadastro/{type}', [RegistrationController::class, 'create'])->whereIn('type', ['familia', 'cuidador'])->name('register');
+    Route::post('/cadastro', [RegistrationController::class, 'store'])->middleware('throttle:6,1')->name('register.store');
+});
 Route::middleware('auth')->group(function (): void {
+    Route::post('/sair', [SessionController::class, 'destroy'])->name('logout');
     Route::get('/familia', [FamilyDashboardController::class, 'index'])->name('family.dashboard');
     Route::get('/familia/cuidadores', [FamilyDashboardController::class, 'caregivers'])->name('family.caregivers');
     Route::get('/familia/contratacoes', [FamilyDashboardController::class, 'contracts'])->name('family.contracts');

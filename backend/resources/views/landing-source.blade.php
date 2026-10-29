@@ -43,10 +43,10 @@
                     <p class="lead">Encontre profissionais independentes para companhia e apoio no dia a dia. Combine
                         necessidades, horários e valores com clareza.</p>
                     <div class="hero-actions">
-                        <a class="button" href="#encontrar">
+                        <a class="button" href="{{ route('register', 'familia') }}">
                             Encontrar cuidador
                         </a>
-                        <a class="button button-light" href="{{ route('login') }}">
+                        <a class="button button-light" href="{{ route('register', 'cuidador') }}">
                             Sou cuidador
                         </a>
                     </div>
@@ -59,7 +59,7 @@
             <div class="container">
                 <p class="eyebrow">encontre por região</p>
                 <h2>Um apoio perto da sua rotina</h2>
-                <form class="search-box" id="search-form">
+                <form class="search-box" action="{{ route('register', 'familia') }}" method="get">
                     <label>Onde você precisa de apoio?<input id="location" name="location"
                             value="Vila Olímpia, São Paulo/SP" autocomplete="address-level2"></label>
                     <label>Data e disponibilidade<select id="availability" name="availability">
@@ -219,7 +219,7 @@
                         <h3>Mais clareza para organizar seus encontros.</h3>
                         <p>Você escolhe horários, valores e a região onde deseja atuar. A Amparo aproxima você de
                             famílias que procuram por companhia e apoio no dia a dia.</p>
-                    </div><a href="{{ route('login') }}" class="button">Quero me cadastrar</a>
+                    </div><a href="{{ route('register', 'cuidador') }}" class="button">Quero me cadastrar</a>
                 </div>
             </div>
         </section>
