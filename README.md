@@ -17,11 +17,21 @@ Protótipo estático responsivo da plataforma Amparo, organizado em quatro exper
 
 ## Fluxo demonstrativo de cuidado
 
-Na página inicial, escolha “Encontrar cuidador” e um serviço. No cadastro, selecione se o cuidado é para você ou outra pessoa. A área da família permite consultar um perfil fictício e simular um pedido. O nome, a região e a escolha ficam em `sessionStorage` apenas durante a sessão da aba; a simulação de pedido guarda apenas o serviço. Não há criação de conta, autenticação real, envio a profissionais ou pagamento. Não insira dados sensíveis no protótipo. O mapa depende de conexão com o Google Maps.
+Na página inicial, escolha “Encontrar cuidador” e um serviço. No cadastro, selecione se o cuidado é para você ou outra pessoa. A área da família permite consultar um perfil fictício e simular um pedido. O nome, a região e a escolha ficam em `sessionStorage` apenas durante a sessão da aba; a simulação de pedido guarda o nome do profissional e o serviço. Não há criação de conta, autenticação real, envio a profissionais ou pagamento. Não insira dados sensíveis no protótipo. O mapa depende de conexão com o Google Maps.
 
 A busca usa os exemplos locais de `js/profissionais-demo.js`, filtrados por serviço e município (São Paulo e Guarulhos). Não usa distância, bairro, agenda real, cadastros reais nem verificação de habilitações. Resultados e perfis são fictícios e não devem ser usados para contratações reais. A busca real deverá consultar profissionais e escopos de atendimento no backend.
 
 As sugestões de endereço e a geocodificação reversa usam Geoapify. Crie uma chave de navegador em https://myprojects.geoapify.com/ e configure `window.AMPARO_GEOAPIFY_KEY` no arquivo local `js/config-endereco.js` (ignorado pelo Git). Em uma nova cópia, crie esse arquivo com `window.AMPARO_GEOAPIFY_KEY = 'SUA_CHAVE';`. A chave de navegador é visível no cliente: restrinja-a aos domínios autorizados no painel do provedor e nunca use uma chave secreta. Sem chave, o endereço pode ser digitado manualmente. Sugestões são solicitadas após três caracteres e 600 ms sem digitação. A geolocalização exige permissão e contexto seguro, como localhost ou HTTPS. Monitore a cota e mantenha as atribuições do provedor e do OpenStreetMap.
+
+## Executar e testar localmente
+
+Para o protótipo estático, execute `php -S localhost:8000` na raiz do projeto e abra `http://localhost:8000/`. Outra alternativa é usar um servidor estático local; localização do navegador exige `localhost` ou HTTPS. Os testes da busca são executados com `node --test tests/profissionais-demo.test.cjs`.
+
+O diretório `backend/` contém uma aplicação Laravel separada, com PHP 8.3+, Composer e Node.js. Ela não está integrada ao fluxo estático mais recente. Em uma instalação nova, execute `composer install`, copie `.env.example` para `.env` somente se o arquivo ainda não existir, configure o banco escolhido e execute `php artisan key:generate`. Antes de executar `php artisan migrate` ou `php artisan db:seed`, confirme que o banco configurado é uma base local de desenvolvimento; não use esses comandos em uma base existente sem revisão. As contas de demonstração são criadas apenas nos ambientes local e testing. Depois execute `npm ci`, `npm run build` e `php artisan serve`. Os testes usam SQLite em memória e podem ser executados com `php artisan test`.
+
+## Limitações para lançamento
+
+O site estático contém login e cadastros demonstrativos, não valida credenciais no servidor e não protege páginas internas por papel. Não publique essa versão como sistema operacional. O backend possui rotas de leitura com autenticação e checagem de papel, mas os serviços e políticas de propriedade ainda não implementam as operações de negócio. Pagamentos, repasses, notificações, chat, verificações, persistência dos pedidos e emissão real de certificados não estão implementados. A auditoria possui proteção no modelo, mas não garante imutabilidade no banco. Antes de qualquer lançamento são necessários autenticação real, controles de acesso e propriedade, proteção de dados, fluxos de contratação e testes de segurança e integração. Há ainda divergências entre as telas estáticas e as views do Laravel.
 
 ## Evolução para MVC
 

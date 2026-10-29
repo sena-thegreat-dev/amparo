@@ -29,6 +29,7 @@ if (familyData.name) document.querySelector('#family-welcome').textContent = `Ol
 if (familyData.careFor === 'other' && familyData.recipient) document.querySelector('#family-intro').textContent = `Encontre apoio para ${familyData.recipient}.`;
 if (familyData.service) filter.elements.service.value = familyData.service;
 if (familyData.location) filter.elements.location.value = familyData.location;
+if (familyData.location) document.querySelector('#simple-map').src = `https://www.google.com/maps?q=${encodeURIComponent(familyData.location)}&output=embed`;
 function renderSearch() {
     const locationValue = filter.elements.location.value.trim();
     const container = document.querySelector('#simple-results');
