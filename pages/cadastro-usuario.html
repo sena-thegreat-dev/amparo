@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../style/core.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../style/acesso.css">
     <link rel="stylesheet" href="../style/mapa.css">
     <link rel="shortcut icon" href="../img/icon.svg" type="image/x-icon">
@@ -35,7 +36,7 @@
                     <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
                 </div>
                 <div id="registration-step" hidden>
-                <button type="button" class="access-back" id="back-to-choice">← Voltar</button>
+                <button type="button" class="access-back" id="back-to-choice"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
                 <h2>Vamos começar?</h2>
                 <p>Preencha os campos para continuar.</p>
                 <p class="registration-choice" id="selected-service" hidden aria-live="polite"></p>
@@ -62,15 +63,18 @@
                             <option>Troca de curativos</option>
                             <option>Acompanhamento</option>
                             <option>Cuidados do dia a dia</option>
-                        </select></label><div class="address-field" data-address><label for="registration-location">Bairro e cidade*</label><div class="address-input-wrap"><input id="registration-location" name="location" data-address-input required autocomplete="off" placeholder="Ex.: São Paulo/SP"><div data-address-results hidden></div></div><div class="address-actions"><button type="button" class="location-button" data-address-search>Buscar endereço</button><button type="button" class="location-button" data-address-geolocate>Usar minha localização</button></div><span data-address-status role="status"></span><small>Endereços por <a href="https://www.geoapify.com/">Geoapify</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></small></div>
-                    <div class="full submit-row"><button class="button" type="submit">Continuar</button><a
-                            href="login.html">Já tenho uma conta</a></div>
+                        </select></label><div class="address-field" data-address><label for="registration-location">Bairro e cidade*</label><div class="address-input-wrap"><input id="registration-location" name="location" data-address-input required autocomplete="off" placeholder="Ex.: São Paulo/SP"><div data-address-results hidden></div></div><div class="address-actions"><button type="button" class="location-button" data-address-geolocate><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Minha localização</button><button type="button" class="location-button" data-address-search><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Buscar</button></div><span data-address-status role="status"></span><small>Endereços © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></small></div>
+                    <div class="full submit-row">
+                        <button class="button" type="submit">Continuar</button>
+                        <a href="login.html">
+                            <span class="button-2"> Já tenho uma conta</span>
+                        </a>
+                    </div>
                 </form>
                 </div>
             </section>
         </main>
     </div>
-    <script src="../js/config-endereco.js"></script>
     <script src="../js/endereco.js"></script>
     <script src="../js/acesso.js"></script>
     <script src="../js/cadastro-familia.js"></script>

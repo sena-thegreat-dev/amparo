@@ -1,11 +1,26 @@
 (() => {
-    const key = window.AMPARO_GEOAPIFY_KEY || 'bbc9d4cc265b49a8a549f338a05670db';
-    async function lookup(path, parameters, signal) {
-        const url = new URL(`https://api.geoapify.com/v1/geocode/${path}`);
-        Object.entries({ ...parameters, format: 'json', lang: 'pt', apiKey: key }).forEach(([name, value]) => url.searchParams.set(name, value));
-        const response = await fetch(url, { signal });
-        if (!response.ok) throw new Error('Serviço indisponível');
-        return (await response.json()).results || [];
+    const endpoint = window.AMPARO_NOMINATIM_URL || 'https://nominatim.openstreetmap.org';
+    const cache = new Map();
+    let queue = Promise.resolve();
+    let lastRequest = 0;
+    function lookup(path, parameters, signal) {
+        const url = new URL(path, endpoint);
+        Object.entries({ ...parameters, format: 'jsonv2', 'accept-language': 'pt-BR' }).forEach(([name, value]) => url.searchParams.set(name, value));
+        const cacheKey = url.toString();
+        if (cache.has(cacheKey)) return Promise.resolve(cache.get(cacheKey));
+        const request = queue.catch(() => {}).then(async () => {
+            const wait = Math.max(0, 1100 - (Date.now() - lastRequest));
+            if (wait) await new Promise(resolve => setTimeout(resolve, wait));
+            if (signal?.aborted) throw new DOMException('Consulta cancelada', 'AbortError');
+            lastRequest = Date.now();
+            const response = await fetch(url, { signal });
+            if (!response.ok) throw new Error('Serviço indisponível');
+            const data = await response.json();
+            cache.set(cacheKey, data);
+            return data;
+        });
+        queue = request;
+        return request;
     }
     document.querySelectorAll('[data-address]').forEach(container => {
         const input = container.querySelector('[data-address-input]');
@@ -13,14 +28,14 @@
         const results = container.querySelector('[data-address-results]');
         const search = container.querySelector('[data-address-search]');
         const geolocate = container.querySelector('[data-address-geolocate]');
-        let timer, controller, version = 0;
+        let controller, version = 0;
         input.setAttribute('aria-expanded', 'false');
         input.setAttribute('aria-haspopup', 'true');
         function closeResults() {
             results.hidden = true;
             input.setAttribute('aria-expanded', 'false');
         }
-        function clearPending() { clearTimeout(timer); if (controller) controller.abort(); version++; }
+        function clearPending() { if (controller) controller.abort(); version++; }
         function choose(name) {
             clearPending();
             input.value = name;
@@ -35,20 +50,19 @@
             results.replaceChildren();
             closeResults();
             if (query.length < 3) { status.textContent = 'Digite pelo menos três letras.'; return; }
-            if (!key) { status.textContent = 'Sugestões indisponíveis. Você pode digitar o endereço completo.'; return; }
             const current = version;
             controller = new AbortController();
             status.textContent = 'Buscando endereços…';
             try {
-                const matches = await lookup('autocomplete', { text: query, filter: 'countrycode:br', limit: '5' }, controller.signal);
+                const matches = await lookup('/search', { q: query, countrycodes: 'br', limit: '5' }, controller.signal);
                 if (current !== version) return;
                 status.textContent = matches.length ? 'Escolha um endereço:' : 'Nenhum endereço encontrado. Tente incluir a cidade.';
                 matches.forEach(match => {
-                    if (!match.formatted) return;
+                    if (!match.display_name) return;
                     const button = document.createElement('button');
                     button.type = 'button';
-                    button.textContent = match.formatted;
-                    button.addEventListener('click', () => choose(match.formatted));
+                    button.textContent = match.display_name;
+                    button.addEventListener('click', () => choose(match.display_name));
                     results.append(button);
                 });
                 if (results.children.length) {
@@ -62,7 +76,6 @@
             results.replaceChildren();
             closeResults();
             status.textContent = '';
-            if (input.value.trim().length >= 3) timer = setTimeout(suggest, 600);
         });
         search.addEventListener('click', suggest);
         container.addEventListener('keydown', event => {
@@ -86,13 +99,13 @@
             if (!container.contains(event.target)) { clearPending(); closeResults(); }
         });
         container.addEventListener('focusout', event => {
-            if (!container.contains(event.relatedTarget)) { clearPending(); closeResults(); }
+            if (!container.contains(event.relatedTarget)) closeResults();
         });
         geolocate.addEventListener('click', () => {
             clearPending();
             results.replaceChildren();
             closeResults();
-            if (!key) { status.textContent = 'Localização por endereço indisponível. Digite o endereço manualmente.'; return; }
+            if (!window.isSecureContext) { status.textContent = 'Para usar sua localização, acesse o site por localhost ou HTTPS.'; return; }
             if (!navigator.geolocation) { status.textContent = 'Localização indisponível. Digite o endereço manualmente.'; return; }
             geolocate.disabled = true;
             status.textContent = 'Buscando sua localização…';
@@ -100,13 +113,20 @@
             navigator.geolocation.getCurrentPosition(async ({ coords }) => {
                 if (current !== version) { geolocate.disabled = false; return; }
                 try {
-                    const matches = await lookup('reverse', { lat: coords.latitude.toFixed(5), lon: coords.longitude.toFixed(5) });
+                    const timeout = new AbortController();
+                    const timer = setTimeout(() => timeout.abort(), 12000);
+                    let match;
+                    try {
+                        match = await lookup('/reverse', { lat: coords.latitude.toFixed(5), lon: coords.longitude.toFixed(5) }, timeout.signal);
+                    } finally {
+                        clearTimeout(timer);
+                    }
                     if (current !== version) return;
-                    if (!matches[0]?.formatted) throw new Error('Endereço não encontrado');
-                    choose(matches[0].formatted);
+                    if (!match.display_name) throw new Error('Endereço não encontrado');
+                    choose(match.display_name);
                 } catch { if (current === version) status.textContent = 'Não foi possível identificar o endereço. Digite-o manualmente.'; }
                 finally { geolocate.disabled = false; }
-            }, () => { if (current === version) status.textContent = 'Não foi possível acessar sua localização. Digite o endereço manualmente.'; geolocate.disabled = false; }, { enableHighAccuracy: false, timeout: 10000 });
+            }, (error) => { if (current === version) status.textContent = error.code === 1 ? 'Permita o acesso à localização no navegador ou informe o endereço manualmente.' : 'Não foi possível obter sua localização. Tente novamente ou digite o endereço.'; geolocate.disabled = false; }, { enableHighAccuracy: false, timeout: 15000 });
         });
     });
 })();

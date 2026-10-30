@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../style/core.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../style/familia.css">
     <link rel="stylesheet" href="../style/mapa.css">
     <link rel="stylesheet" href="../style/familia-simples.css">
@@ -38,7 +39,7 @@
                         data-open="help">Ver opções de ajuda</button>
                 </article>
             </section>
-            <section data-screen="search" hidden><button class="simple-back" type="button" data-open="overview">← Voltar
+            <section data-screen="search" hidden><button class="simple-back" type="button" data-open="overview"><i class="fa-solid fa-arrow-left"></i> Voltar
                     ao início</button>
                 <h1>Encontre seu cuidador</h1>
                 <p>Confira o serviço e a região desejados.</p>
@@ -47,7 +48,7 @@
                             <option>Troca de curativos</option>
                             <option>Acompanhamento</option>
                             <option>Cuidados do dia a dia</option>
-                        </select></label><div class="address-field" data-address><label for="family-search-location">Bairro e cidade</label><div class="address-input-wrap"><input id="family-search-location" name="location" data-address-input autocomplete="off" placeholder="Informe sua região"><div data-address-results hidden></div></div><div class="address-actions"><button type="button" class="location-button" data-address-search>Buscar endereço</button><button type="button" class="location-button" data-address-geolocate>Usar minha localização</button></div><span data-address-status role="status"></span><small>Endereços por <a href="https://www.geoapify.com/">Geoapify</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></small></div><button class="simple-primary"
+                        </select></label><div class="address-field" data-address><label for="family-search-location">Bairro e cidade</label><div class="address-input-wrap"><input id="family-search-location" name="location" data-address-input autocomplete="off" placeholder="Informe sua região"><div data-address-results hidden></div></div><div class="address-actions"><button type="button" class="location-button" data-address-geolocate><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Minha localização</button><button type="button" class="location-button" data-address-search><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Buscar</button></div><span data-address-status role="status"></span><small>Endereços © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></small></div><button class="simple-primary"
                         type="submit">Atualizar busca</button></form>
                 <div id="simple-results" aria-live="polite"></div>
                 <details class="simple-card">
@@ -56,7 +57,7 @@
                         src="https://www.google.com/maps?q=São%20Paulo%2C%20SP&output=embed"></iframe>
                 </details>
             </section>
-            <section data-screen="profile" hidden><button class="simple-back" type="button" data-open="search">← Voltar
+            <section data-screen="profile" hidden><button class="simple-back" type="button" data-open="search"><i class="fa-solid fa-arrow-left"></i> Voltar
                     à busca</button>
                 <article class="simple-card">
                     <div class="simple-person">
@@ -70,7 +71,7 @@
                         data-open="request">Solicitar atendimento</button>
                 </article>
             </section>
-            <section data-screen="request" hidden><button class="simple-back" type="button" data-open="profile">← Voltar
+            <section data-screen="request" hidden><button class="simple-back" type="button" data-open="profile"><i class="fa-solid fa-arrow-left"></i> Voltar
                     ao perfil</button>
                 <h1>Quando e onde precisa de ajuda?</h1>
                 <p>Confira os detalhes antes de continuar.</p>
@@ -95,13 +96,13 @@
                 <button class="simple-primary" type="button"
                     data-open="requests">Ver meus pedidos</button>
             </section>
-            <section data-screen="requests" hidden><button class="simple-back" type="button" data-open="overview">←
+            <section data-screen="requests" hidden><button class="simple-back" type="button" data-open="overview"><i class="fa-solid fa-arrow-left"></i>
                     Voltar ao início</button>
                 <h1>Meus pedidos</h1>
                 <div id="simple-requests" class="simple-card"></div><button class="simple-secondary" type="button"
                     data-open="search">Encontrar cuidador</button>
             </section>
-            <section data-screen="help" hidden><button class="simple-back" type="button" data-open="overview">← Voltar
+            <section data-screen="help" hidden><button class="simple-back" type="button" data-open="overview"><i class="fa-solid fa-arrow-left"></i>Voltar
                     ao início</button>
                 <h1>Como podemos ajudar?</h1>
                 <article class="simple-card">
@@ -152,7 +153,7 @@
                         </div><img src="../img/fundo-index.jpg" alt="Cuidadora conversa com senhora em casa">
                     </div>
                     <div class="service-row">
-                        <article><span>☕</span>
+                        <article><span aria-hidden="true"><i class="fa-solid fa-mug-hot"></i></span>
                             <h3>Companhia e rotina</h3>
                             <p>Conversas, refeições e passeios</p>
                         </article>
@@ -591,7 +592,6 @@
         </div>
     </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="../js/config-endereco.js"></script>
     <script src="../js/endereco.js"></script>
     <script src="../js/profissionais-demo.js"></script>
     <script src="../js/familia-simples.js"></script>

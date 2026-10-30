@@ -1,0 +1,123 @@
+/* Direção visual acolhedora da página pública. */
+body[data-page="landing"] {
+    --ink: #104f61;
+    --ink-deep: #093d4d;
+    --cream: #fbfaf6;
+    --line: #e5e8e5;
+    --shadow: 0 12px 32px rgba(22, 55, 55, .055);
+    color: #2e392e;
+    background: #fbf9f2;
+    font-size: 16px;
+}
+
+body[data-page="landing"] h1,
+body[data-page="landing"] h2,
+body[data-page="landing"] h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: #28392b;
+    letter-spacing: -.025em;
+}
+
+body[data-page="landing"] .hero h1 { color: #fff; }
+body[data-page="landing"] .eyebrow { color: #2c7c72; font-size: .7rem; letter-spacing: .1em; }
+body[data-page="landing"] .section { padding: 86px 0; }
+body[data-page="landing"] .section h2,
+body[data-page="landing"] .cta-section h2 { max-width: 740px; font-size: clamp(2rem, 3.3vw, 3.1rem); line-height: 1.15; }
+body[data-page="landing"] .section p { line-height: 1.6; }
+body[data-page="landing"] .button { min-height: 48px; border-color: #104f61; background: #104f61; color: #fff; font-size: .95rem; }
+body[data-page="landing"] .button:hover { background: #093d4d; border-color: #093d4d; }
+body[data-page="landing"] .hero .button-light { color: #294333; background: #fffdf6; border-color: #fffdf6; }
+body[data-page="landing"] .hero .button-light:hover { background: #f1f4e9; }
+
+#modalidades {
+    background: linear-gradient(90deg, #f6f3e9 0%, #f6f3e9 49%, rgba(246,243,233,.77) 68%, rgba(246,243,233,.2) 100%), url('../img/servico-cuidados.webp') right center / cover no-repeat;
+}
+#modalidades .support-grid { margin-top: 34px; gap: 18px; }
+#modalidades .support-card { min-height: 215px; padding: 28px; border: 1px solid #e1e6d8; border-radius: 18px; background: #fffdf7; box-shadow: var(--shadow); }
+#modalidades .support-card h3 { font-size: 1.35rem; }
+#modalidades .support-card p { font-size: 1rem; color: #566459; }
+#modalidades .line-icon { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 20px; border-radius: 15px; background: #edf1e2; color: #104f61; font-size: 1.4rem; }
+#modalidades .notice { display: flex; align-items: flex-start; gap: 17px; margin-top: 22px; padding: 20px 24px; border-radius: 14px; background: #e7edd7; color: #40513c; font-size: 1rem; line-height: 1.5; }
+#modalidades .notice svg { flex: none; margin-top: 4px; color: #104f61; font-size: 1.5rem; }
+#modalidades .notice strong { display: block; color: #2b432d; }
+
+#como-funciona { background: #f5f1e7; }
+#como-funciona .steps-grid { position: relative; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; margin-top: 38px; }
+#como-funciona .steps-grid::before { content: ""; position: absolute; top: 24px; left: 24px; right: 24px; height: 1px; background: #b8c9a1; }
+#como-funciona .step-card { position: relative; min-height: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+#como-funciona .step-card span { position: relative; display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 20px; border: 3px solid #f5f1e7; border-radius: 50%; background: #093d4d; color: #fff; font: 700 .9rem "DM Sans", sans-serif; }
+#como-funciona .step-card h3 { font-size: 1.2rem; }
+#como-funciona .step-card p { max-width: 240px; color: #566459; font-size: 1rem; }
+
+#profissionais { background: #fbf9f2; }
+#profissionais .professionals-grid { gap: 20px; margin-top: 34px; }
+#profissionais .professional-card { display: flex; flex-direction: column; padding: 9px 9px 18px; overflow: hidden; border: 1px solid #e0e5d9; border-radius: 17px; background: #fffdf8; box-shadow: var(--shadow); }
+#profissionais .profile-line { position: relative; grid-template-columns: 1fr 42px; gap: 12px; }
+#profissionais .profile-line img { grid-column: 1 / -1; width: 100%; height: 200px; border-radius: 11px; object-fit: contain; object-position: center 28%; }
+#profissionais .profile-line > div { padding-left: 10px; }
+#profissionais .profile-line h3 { font-size: 1.3rem; }
+#profissionais .profile-line p { color: #667366; font-size: .9rem; }
+#profissionais .heart-button { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border-radius: 50%; background: #fffdf8; color: #486642; }
+#profissionais .heart-button.active { color: #a1424b; }
+#profissionais .rating { margin: 15px 10px 8px; color: #99651c; font-size: 1rem; }
+#profissionais .rating span { color: #647165; }
+#profissionais .professional-description { flex: 1; min-height: 0; margin: 0 10px 16px; color: #526053; font-size: .98rem; }
+#profissionais .card-footer { align-items: stretch; flex-direction: column; gap: 12px; margin: 0 10px; border: 0; }
+#profissionais .card-footer strong { color: #2a3d2b; font-size: 1.15rem; }
+#profissionais .card-footer small { color: #526053; font-size: .95rem; }
+#profissionais .card-action { min-height: 46px; padding: 10px; border: 1px solid #a4b693; border-radius: 10px; color: #314d31; font-size: 1rem; }
+#profissionais .card-action:hover { background: #eef3e7; }
+#profissionais .learning-banner { display: flex; gap: 20px; margin: 28px 0 18px; padding: 20px 24px; background: #e7edd8; color: #30432f; }
+#profissionais .learning-banner > svg { flex: none; color: #104f61; font-size: 2rem; }
+#profissionais .learning-banner > div { flex: 1; }
+#profissionais .learning-banner strong { font: 700 1.1rem "DM Sans", sans-serif; }
+#profissionais .learning-banner p { max-width: none; color: #4a5a47; font-size: .95rem; }
+#profissionais .learning-banner .button { background: #fffdf8; color: #314d31; border-color: #d2dec6; }
+#profissionais .team-link { display: block; width: fit-content; margin: 20px auto 0; color: #405f36; font-size: 1rem; font-weight: 700; }
+#profissionais .team-link svg { margin-left: 5px; }
+
+body[data-page="landing"] .soft-section { background: #f7f4ea; }
+body[data-page="landing"] .info-grid { gap: 18px; }
+body[data-page="landing"] .info-grid article { min-height: 0; padding: 28px; border: 1px solid #e0e5d8; border-radius: 16px; background: #fffdf8; }
+body[data-page="landing"] .info-grid h3 { font-size: 1.3rem; }
+body[data-page="landing"] .info-grid p { color: #566459; font-size: 1rem; }
+body[data-page="landing"] .info-icon { display: block; margin-bottom: 18px; color: #104f61; font-size: 1.6rem; }
+body[data-page="landing"] .work-section { background: linear-gradient(90deg, #f0eee2 0%, #f0eee2 40%, rgba(240,238,226,.86) 62%, rgba(240,238,226,.2) 100%), url('../img/servico-banho.webp') center / cover no-repeat; }
+body[data-page="landing"] .work-card { max-width: 670px; align-items: flex-start; flex-direction: column; gap: 22px; padding: 0; border: 0; background: transparent; box-shadow: none; }
+body[data-page="landing"] .work-card h3 { font-size: 1.3rem; }
+body[data-page="landing"] .work-card p { color: #445749; font-size: 1rem; }
+body[data-page="landing"] .cta-section { padding: 86px 0; background: linear-gradient(90deg, rgba(49,48,31,.9), rgba(49,48,31,.62) 55%, rgba(49,48,31,.25)), url('../img/hero-cuidado.webp') center 58% / cover no-repeat; }
+body[data-page="landing"] .cta-section h2 { max-width: 600px; color: #fff; }
+body[data-page="landing"] .cta-section p { color: #fff; font-size: 1.1rem; }
+body[data-page="landing"] .cta-section .button { border-color: #fffdf7; background: #fffdf7; color: #314a32; }
+body[data-page="landing"] .faq-section { background: #f7f4ea; }
+body[data-page="landing"] .faq-item { border: 1px solid #e1e5d8; border-radius: 12px; background: #fffdf8; }
+body[data-page="landing"] .faq-item button { min-height: 58px; padding: 18px 22px; background: #fffdf8; color: #2c4230; font-size: 1rem; }
+body[data-page="landing"] .faq-item div p { color: #526053; font-size: 1rem; }
+body[data-page="landing"] .site-footer { padding: 34px 0; background: #fcfaf3; color: #536354; font-size: .9rem; }
+body[data-page="landing"] .site-footer .brand { color: #304a33; }
+body[data-page="landing"] .footer-top { gap: 16px; border-color: #e4e8dc; }
+
+@media (max-width: 980px) {
+    #modalidades .support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #profissionais .profile-line img { height: 160px; }
+}
+@media (max-width: 760px) {
+    body[data-page="landing"] .section { padding: 56px 0; }
+    #modalidades { background: #f6f3e9; }
+    #modalidades .support-grid, #como-funciona .steps-grid { grid-template-columns: 1fr; }
+    #modalidades .support-card { min-height: 0; }
+    #como-funciona .steps-grid { gap: 20px; }
+    #como-funciona .steps-grid::before { top: 24px; bottom: 24px; left: 24px; right: auto; width: 1px; height: auto; }
+    #como-funciona .step-card { display: grid; grid-template-columns: 48px 1fr; column-gap: 16px; }
+    #como-funciona .step-card span { grid-row: 1 / 3; margin: 0; }
+    #como-funciona .step-card p { max-width: none; }
+    #profissionais .professionals-grid { grid-template-columns: 1fr; }
+    #profissionais .profile-line img { height: 220px; }
+    #profissionais .learning-banner { align-items: flex-start; flex-wrap: wrap; }
+    #profissionais .learning-banner > div { flex-basis: calc(100% - 60px); }
+    #profissionais .learning-banner .button { width: 100%; }
+    body[data-page="landing"] .work-section { background: #f0eee2; }
+    body[data-page="landing"] .cta-section { padding: 60px 0; background-position: 65% center; }
+    body[data-page="landing"] .cta-section h2 { color: #fff; }
+}
